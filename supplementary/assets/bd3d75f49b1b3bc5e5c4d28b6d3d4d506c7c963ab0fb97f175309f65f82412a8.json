@@ -1,0 +1,14 @@
+{
+  "model": "WAN 2.1 14B mixed mask/bbox + VRS + DoF",
+  "checkpoint": "step 4000 EMA",
+  "steps": 50,
+  "cfg": 4,
+  "orthogonal_guidance": 1,
+  "seed": 78219,
+  "width": 1280,
+  "height": 720,
+  "frames": 81,
+  "prompt": "Full-body realistic video of one naturally proportioned adult woman doing a light, lively twirl on a sunlit stone garden terrace. She wears a simple sleeveless coral-red summer dress: a fitted bodice at her natural waist and a single flowing knee-length skirt. Her bare shoulders, bare arms, bare hands and bare lower legs are clearly visible. She has a normal adult head-to-body ratio and slender natural arms. Both empty hands are relaxed, fingers gently curved, held away from her waist and skirt. She takes small grounded pivoting steps, turns her shoulders and hips through a side view and continues turning, then eases into a balanced stance. Her elbows bend naturally as her arms open and draw closer. The skirt lifts outward with the turn and falls in soft folds as she slows; her dark hair follows the motion. A fixed wide camera shows her entire body and cream flat shoes with space above her head and below her feet. Two terracotta flower pots stand near the far left and right edges; a low stone wall and green shrubs form a stable background beneath a narrow strip of clear blue sky. Warm natural daylight, coherent anatomy, real-time movement, one continuous shot.",
+  "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, oversized head, distorted torso, malformed anatomy, extra arms, extra legs, extra fingers, fused fingers, oversized hands, hands fused to clothing, sleeves, gloves, wrist fabric, trousers, leggings, layered skirt, frozen pose, motionless limbs, sliding feet, hovering, slow motion, duplicate person, cropped head, cropped feet, camera cuts",
+  "grid_sha256": "fcc5ded3579183abb5126036b2e6c6a0de437968d8336743c2142e5a8327e720"
+}

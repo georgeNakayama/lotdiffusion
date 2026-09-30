@@ -1,0 +1,19 @@
+{
+  "prompt": "A whimsical cinematic storybook photograph of a little girl riding an enormous friendly Pembroke Welsh corgi the size of a small pony through a sunny meadow. The corgi has fluffy golden-orange and white fur, very short sturdy legs, a long rounded body, large upright triangular ears, bright brown eyes, a white muzzle and chest, and a happy open-mouthed expression. Its full body is visible in side view facing right, its face turned slightly toward the camera, its four paws on the grassy path. The little girl sits comfortably astride the middle of its back, smiling, wearing a red pinafore dress over a cream long-sleeved shirt, brown ankle boots, and her brown hair tied in a ponytail. Her hands rest gently near the corgis shoulders. Square composition: girl in the upper middle with her head centered at 45 percent across and 22 percent down, body extending down to the dogs back; corgi body spans the lower middle from 18 to 75 percent across, centered at 67 percent down, its head on the right around 74 percent across and 55 percent down, paws around 87 percent down. Clear readable silhouettes, expressive faces, natural hands, detailed soft fur, realistic fabric folds. Warm gentle morning light. Simple softly defocused pale blue sky and distant green meadow background, a soft grassy path along the bottom, shallow depth of field. Charming, joyful, imaginative, polished cinematic realism. No lettering or watermark.",
+  "steps": 50,
+  "cfg_scale": 4,
+  "orthogonal_guidance": 1,
+  "seed": 42,
+  "resolution": 1024,
+  "grid_source": "Painted",
+  "softness": 1.5,
+  "overall_detail": 1,
+  "token_count": 1546,
+  "uniform_fine_token_count": 4096,
+  "leaf_counts": {
+    "1x1": 1312,
+    "2x2": 140,
+    "4x4": 79,
+    "8x8": 15
+  }
+}

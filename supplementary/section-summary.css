@@ -1,0 +1,7 @@
+.section-summary {
+  margin: 8px 0 24px !important;
+  max-width: 1100px;
+  color: #46545f !important;
+  font: 400 18px/1.6 system-ui, sans-serif !important;
+  text-align: left;
+}

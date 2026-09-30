@@ -1,0 +1,31 @@
+/* Shared prompt disclosure component, including embedded demo pages. */
+details.generation-prompt {
+  display:block;
+  background:#fff !important;
+  border:1px solid #dce1e5 !important;
+  border-radius:8px !important;
+  padding:12px 16px !important;
+  margin:18px 0 !important;
+  font:16px/1.55 system-ui,sans-serif !important;
+  color:#17232c !important;
+}
+details.generation-prompt > summary {
+  display:list-item !important;
+  list-style:disclosure-closed inside !important;
+  cursor:pointer;
+  padding:0 !important;
+  margin:0 !important;
+  font:600 16px/1.55 system-ui,sans-serif !important;
+  color:#17232c !important;
+}
+details.generation-prompt[open] > summary {list-style-type:disclosure-open !important}
+details.generation-prompt > summary:focus-visible {outline:3px solid #dc9a36;outline-offset:4px;border-radius:3px}
+details.generation-prompt > p {
+  margin:12px 0 0 !important;
+  padding:0 !important;
+  max-width:none !important;
+  font:400 16px/1.55 system-ui,sans-serif !important;
+  color:#17232c !important;
+  white-space:pre-wrap !important;
+  overflow-wrap:anywhere;
+}

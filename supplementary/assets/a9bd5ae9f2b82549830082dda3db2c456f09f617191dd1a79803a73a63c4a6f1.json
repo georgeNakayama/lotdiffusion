@@ -1,0 +1,20 @@
+{
+  "prompt": "Candid realistic sports photograph of Barack Obama preparing a basketball shot on an outdoor court. Clearly recognizable Barack Obama facial likeness, short close-cropped salt-and-pepper hair, characteristic facial proportions and prominent ears. He looks upward toward an unseen basketball hoop with a focused expression and slightly parted lips. He wears a navy-blue and white narrowly striped button-down shirt with the sleeves rolled up, open collar, and a dark wristwatch. He holds a large orange pebbled basketball with black curved seams beside the left side of his face in the image, both hands supporting the ball, individual fingers spread naturally over its surface. His nearer forearm crosses diagonally upward from the lower right toward the ball. Square waist-up composition: basketball centered in the upper-left around 30 percent across and 36 percent down; his head in the upper-right around 61 percent across and 27 percent down; his eyes near 22 percent down. The striped shirt fills the lower half and right side of the frame. Natural midday sunlight, realistic skin highlights and facial detail, crisp hands, distinct basketball texture, fine fabric stripes. Background softly out of focus: dark green foliage, a chain-link fence, and a partially obscured spectator. Documentary photojournalism, natural colors, realistic anatomy, no captions, no watermark.",
+  "steps": 50,
+  "cfg_scale": 4,
+  "orthogonal_guidance": 1,
+  "seed": 42,
+  "resolution": 1024,
+  "grid_source": "Painted",
+  "softness": 1.5,
+  "overall_detail": 1,
+  "token_count": 2986,
+  "previous_token_count": 2050,
+  "uniform_fine_token_count": 4096,
+  "leaf_counts": {
+    "1x1": 2808,
+    "2x2": 146,
+    "4x4": 28,
+    "8x8": 4
+  }
+}

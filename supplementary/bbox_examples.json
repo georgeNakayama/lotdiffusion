@@ -1,0 +1,80 @@
+{
+  "model": "FLUX.2 9B",
+  "width": 1536,
+  "height": 1024,
+  "steps": 50,
+  "cfg": 4,
+  "orthogonal_guidance": 1,
+  "examples": [
+    {
+      "id": "living-room",
+      "title": "Living Room",
+      "seed": 123,
+      "tokens": 2646,
+      "prompt": "Photorealistic architectural photograph of a sunlit modern living room, wide 3:2 composition, straight-on eye-level view. A cream linen three-seater sofa is centered against a plain warm-white plaster wall, occupying the middle-lower part of the image. Low rolled arms, sage-green pillows and subtle fabric texture. A narrow floor-to-ceiling walnut bookshelf stands at the far left, filled with hardcover books, a brass lamp and ceramics. A small trailing pothos spills from one shelf. A tall fiddle-leaf fig in a terracotta planter stands at the far right, with many distinct glossy green leaves. A low walnut coffee table with a rounded rectangular top occupies the lower-center foreground, in front of the sofa; a small stack of books and an off-white ceramic vase with dried pampas grass sit on top. Generous uncluttered wall space above the sofa. Pale oak floor and a simple cream wool rug beneath the table. Soft daylight from an unseen window on the left, realistic contact shadows, natural wood grain, restrained cream, walnut and sage palette. Balanced symmetrical framing, realistic furniture proportions, everything sharply in focus. No people, labels or graphic overlays.\n",
+      "media": {
+        "generated": "bbox_media/living-room/generated.webp",
+        "boxes": "bbox_media/living-room/boxes.webp",
+        "layout": "bbox_media/living-room/layout.webp",
+        "box_overlay": "bbox_media/living-room/box_overlay.webp",
+        "token_overlay": "bbox_media/living-room/token_overlay.webp"
+      }
+    },
+    {
+      "id": "reading-corner",
+      "title": "Reading Corner",
+      "seed": 31415,
+      "tokens": 2454,
+      "prompt": "Photorealistic architectural photograph of a sunlit reading corner, wide 3:2 eye-level composition. A tall oak bookshelf fills the left side, with hardcover books, a ceramic vase and a brass clock. A worn cognac leather armchair sits on the right, with rolled arms, creased leather and a cream wool throw. Between them, a separate small round walnut side table holds a terracotta pot with slender green stems and delicate white flowers. The flowers rise prominently above the table. An open hardcover book with fanned pages rests on the chair's right armrest. Keep a visible gap between the side table and chair. Pale plaster wall with generous empty space above the furniture, oak floor across the bottom, a jute rug edge at lower left. Soft daylight from the right, realistic contact shadows, restrained natural colors, visible material texture. No people or graphic overlays.\n",
+      "media": {
+        "generated": "bbox_media/reading-corner/generated.webp",
+        "boxes": "bbox_media/reading-corner/boxes.webp",
+        "layout": "bbox_media/reading-corner/layout.webp",
+        "box_overlay": "bbox_media/reading-corner/box_overlay.webp",
+        "token_overlay": "bbox_media/reading-corner/token_overlay.webp"
+      }
+    },
+    {
+      "id": "bedroom",
+      "title": "Bedroom",
+      "seed": 31415,
+      "tokens": 2046,
+      "prompt": "Photorealistic architectural photograph of a tranquil bedroom in a wide 3:2 composition. A low bed sits slightly left of center against a pale plaster wall, with rumpled oatmeal-white linen, two pillows and a duvet folded back at its foot. On the far left, a carved walnut bedside cabinet supports a cream mug, a closed navy book and a small framed botanical print, forming one compact group. A tall fiddle-leaf fig fills the right side, with broad glossy leaves and a terracotta pot. A sheer-curtained window is visible behind the plant in the upper right. Keep the bed and bedside cabinet visually distinct. Generous plain wall space above the bed. Oak floor and a beige jute rug across the foreground. Soft morning daylight from the right, natural contact shadows, realistic linen folds, carved wood and leaf veins. No people or graphic overlays.\n",
+      "media": {
+        "generated": "bbox_media/bedroom/generated.webp",
+        "boxes": "bbox_media/bedroom/boxes.webp",
+        "layout": "bbox_media/bedroom/layout.webp",
+        "box_overlay": "bbox_media/bedroom/box_overlay.webp",
+        "token_overlay": "bbox_media/bedroom/token_overlay.webp"
+      }
+    },
+    {
+      "id": "coastal",
+      "title": "Coastal",
+      "seed": 31415,
+      "tokens": 1962,
+      "prompt": "Photorealistic coastal landscape in a wide 3:2 composition. Broad clear pale-blue sky occupies roughly the upper two-thirds, above a calm sea and sandy beach along the bottom. A weathered blue-and-white wooden fishing boat rests on the sand in the lower left, seen in three-quarter view, with peeling paint, rusted fittings, a small cabin and a slender mast rising into the sky. A wooden oar leans against its hull. A tangled heap of hemp ropes and draped off-white fishing net lies beside and partly in front of the boat, with clearly visible frayed fibers and knotted mesh. Two small seagulls glide on the right just above the horizon, separated from the boat. A piece of driftwood rests at the lower-right edge. A faint distant headland lies on the far-right horizon. Quiet morning daylight from the right, natural soft shadows, gentle sea ripples and damp sand, realistic materials. No people, text or graphic overlays.\n",
+      "media": {
+        "generated": "bbox_media/coastal/generated.webp",
+        "boxes": "bbox_media/coastal/boxes.webp",
+        "layout": "bbox_media/coastal/layout.webp",
+        "box_overlay": "bbox_media/coastal/box_overlay.webp",
+        "token_overlay": "bbox_media/coastal/token_overlay.webp"
+      }
+    },
+    {
+      "id": "still-life",
+      "title": "Still Life",
+      "seed": 123,
+      "tokens": 1953,
+      "prompt": "Photorealistic natural-light still life, wide 3:2 composition. On the left, a chalky off-white hand-thrown ceramic vase holds a loose tall bouquet of pale pink cosmos, white yarrow, lavender, dried wheat and trailing eucalyptus. The bouquet fills the upper-left region, with delicate distinct petals and leaves, and the vase sits below it on the table. On the right, a shallow cream stoneware bowl holds whole purple figs, halved figs exposing magenta interiors, and cut blood oranges showing crimson segments. A separate folded oatmeal linen cloth lies in the lower center, with clear exposed tabletop between it and both the vase and bowl. One small fallen pink petal rests on the cloth. Worn oak tabletop fills the lower portion, plain muted plaster backdrop above. Soft light from upper left, realistic ceramic texture, fruit flesh, linen folds and contact shadows, restrained natural colors. No people, labels or graphic overlays.\n",
+      "media": {
+        "generated": "bbox_media/still-life/generated.webp",
+        "boxes": "bbox_media/still-life/boxes.webp",
+        "layout": "bbox_media/still-life/layout.webp",
+        "box_overlay": "bbox_media/still-life/box_overlay.webp",
+        "token_overlay": "bbox_media/still-life/token_overlay.webp"
+      }
+    }
+  ]
+}

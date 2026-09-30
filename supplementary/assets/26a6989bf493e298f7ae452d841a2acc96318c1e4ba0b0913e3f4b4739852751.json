@@ -1,0 +1,14 @@
+{
+  "model": "WAN 2.1 14B mixed mask/bbox + VRS + DoF",
+  "checkpoint": "step 4000 EMA",
+  "steps": 50,
+  "cfg": 4,
+  "orthogonal_guidance": 1,
+  "seed": 31415,
+  "width": 1280,
+  "height": 720,
+  "frames": 81,
+  "prompt": "A realistic sports video of one adult basketball player in a red sleeveless jersey, black shorts and white sneakers taking a jump shot on an outdoor court. A fixed wide side view shows the full player on the left facing right and the basketball hoop on the right. He starts holding an orange basketball at his chest, bends both knees into a crouch, raises the ball above his forehead, then explosively straightens his legs and jumps. At the top of the jump he extends both arms upward and forward and flicks his shooting wrist, releasing the ball toward the hoop. The ball clearly separates from his fingers and follows a high curved arc to the right toward the rim. He descends, lands on both feet with bent knees, and holds his shooting hand up in follow-through while watching the ball. Distinct changing knee, elbow, wrist and body positions throughout, natural real-time movement. A white backboard, orange rim and hanging net stand on a dark support at the right. Textured blue-green court with white painted lines, a low fence and leafy trees in the distance, clear pale blue sky along the top. Bright daylight and coherent shadows.",
+  "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, frozen pose, motionless limbs, sliding feet, hovering, slow motion, ball glued to hands, duplicate basketballs, extra arms, extra fingers, deformed hands, reversed action, camera cuts",
+  "grid_sha256": "e8d48c7c6f712e5228a0b3e454de8b1d8e374bbaecedfd05dcb04dc16b73a871"
+}

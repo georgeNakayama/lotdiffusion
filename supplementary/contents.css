@@ -1,0 +1,36 @@
+#results-index{padding:0;max-width:none;background:#fff;backdrop-filter:none;z-index:20;border:1px solid #dce1e5;border-radius:12px;margin:16px 24px 24px;position:sticky;top:8px}
+#contents-menu summary{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;font-size:18px;font-weight:700;list-style:none;color:#17232c}
+#contents-menu summary::-webkit-details-marker{display:none}
+#contents-menu[open] summary>span{transform:rotate(180deg)}
+#contents-menu{padding:0}
+.contents-tree{padding:0 10px 14px;max-height:70vh;overflow-y:auto;overscroll-behavior:contain}
+#results-index h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#63717d;margin:14px 10px 7px}
+#results-index ol{list-style:none;margin:0;padding:0}
+#results-index ol ol{margin:2px 0 4px 16px;padding-left:7px;border-left:1px solid #dce1e5}
+#results-index a{display:flex;align-items:baseline;gap:8px;min-height:42px;padding:10px 9px;border-radius:6px;color:#34434e;text-decoration:none;font-size:15px;line-height:1.45}
+#results-index a>span{min-width:24px;font-size:14px;color:#687985;font-variant-numeric:tabular-nums}
+#results-index a:hover{background:#f0f4f5;color:#205e61}
+#results-index a[aria-current="location"]{background:#e6f1ef;color:#174b48;font-weight:650;box-shadow:inset 3px 0 #205e61}
+#results-index a[aria-current="location"]>span{color:inherit}
+#results-index a:focus-visible,#contents-menu summary:focus-visible{outline:3px solid #dc9a36;outline-offset:1px}
+#image-individual-layouts{scroll-margin-top:85px}
+@media(min-width:1200px){
+ body{padding-left:252px}
+ #results-index{display:block;position:fixed;left:14px;top:24px;width:224px;margin:0;max-height:calc(100dvh - 48px);overflow:hidden}
+ #contents-menu{width:100%;min-width:0}
+ #contents-menu[open]{display:flex;flex-direction:column;max-height:calc(100dvh - 50px)}
+ #contents-menu summary{flex-shrink:0}
+ #contents-menu summary{cursor:default;padding:17px 18px 8px}
+ #contents-menu summary>span{display:none}
+ .contents-tree{min-height:0;max-height:calc(100dvh - 110px);overflow-y:auto;scrollbar-gutter:stable;padding-bottom:24px}
+ .index-return{display:none}
+}
+@media(max-width:1199px){
+ #contents-menu:not([open]) summary:before{content:'☰';margin-right:10px}
+ #contents-menu summary>span{margin-left:auto}
+ .contents-tree{max-height:65vh}
+}
+@media(prefers-reduced-motion:no-preference){#results-index a{transition:background-color .12s,color .12s}}
+
+/* Keep the mobile contents bar within its outer margins. */
+@media(max-width:1199px){#results-index{width:auto;display:block}#contents-menu{min-width:0;width:100%}}

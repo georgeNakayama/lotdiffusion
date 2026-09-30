@@ -1,0 +1,86 @@
+{
+  "background_token_shape": [
+    8,
+    8
+  ],
+  "regions": [
+    {
+      "name": "Sea and headland",
+      "bbox_pixels_yxyx": [
+        656,
+        0,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "Beach foreground",
+      "bbox_pixels_yxyx": [
+        800,
+        0,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Boat, mast and oar",
+      "bbox_pixels_yxyx": [
+        480,
+        112,
+        976,
+        720
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Ropes and fishing net",
+      "bbox_pixels_yxyx": [
+        816,
+        352,
+        1024,
+        880
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Seagulls",
+      "bbox_pixels_yxyx": [
+        544,
+        1120,
+        640,
+        1328
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Driftwood",
+      "bbox_pixels_yxyx": [
+        912,
+        1344,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    }
+  ]
+}

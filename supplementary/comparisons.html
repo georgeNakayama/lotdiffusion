@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5. Video Generation Qualitative Baseline Comparisons</title>
+<script src="media-preload.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:22px;background:#f6f5f2;color:#202826;font:16px system-ui}h2{margin:0 0 8px;font-size:28px}p{line-height:1.5}nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}button,select{font:inherit;padding:8px 14px;background:white;border:1px solid #c7ceca;border-radius:6px;cursor:pointer}.panels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}figure{margin:0;min-width:0;background:white;border-radius:7px;overflow:hidden}figcaption{padding:10px;font-size:14px;font-weight:650}video{width:100%;aspect-ratio:16/9;display:block;background:#ddd}small{color:#586460}details{margin:18px 0}#prompt{max-width:1100px}.legend{display:inline-block;width:150px;height:9px;background:linear-gradient(90deg,#000004,#51127c,#b73779,#fc8961,#fcfdbf);margin:10px}#error{color:#a20}@media(max-width:850px){.panels{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:450px){.panels{grid-template-columns:1fr}}
+figcaption{font-size:20px;font-weight:700;text-align:center;padding:14px 8px;min-height:76px;display:flex;align-items:center;justify-content:center}
+.stage{position:relative}.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.overlay-toggle{display:block;margin:8px auto 12px;font-size:14px}.overlay-toggle[aria-pressed="true"]{background:#205e61;color:white}
+.panels{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.panels>figure{grid-column:span 2}
+.panels>figure:nth-child(1){grid-column:2 / span 2;grid-row:1}
+.panels>figure:nth-child(2){grid-column:4 / span 2;grid-row:1}
+.panels>figure:nth-child(3){grid-column:1 / span 2;grid-row:2}
+.panels>figure:nth-child(4){grid-column:3 / span 2;grid-row:2}
+.panels>figure:nth-child(5){grid-column:5 / span 2;grid-row:2}
+@media(max-width:650px){.panels{grid-template-columns:repeat(2,minmax(0,1fr))}.panels>figure:nth-child(n){grid-column:auto;grid-row:auto}}
+@media(max-width:450px){.panels{grid-template-columns:1fr}}
+body{background:#f7f8fa;color:#17232c;font:16px/1.55 system-ui,sans-serif}
+.section-header{padding-top:26px;padding-bottom:16px}
+.section-title{font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1.55;margin:8px 0}
+@media(max-width:650px){.section-title{font-size:30px}}
+.cue-colorbar{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;color:#586460;font-size:13px}
+.cue-colorbar .legend{flex:1;max-width:260px;height:9px;margin:0}
+.generation-prompt{background:white;border:1px solid #dce1e5;border-radius:8px;padding:12px 16px}
+.generation-prompt summary{cursor:pointer;font-weight:600}
+.generation-prompt p{white-space:pre-wrap;margin:12px 0 0}
+.dots{display:flex;flex-wrap:nowrap;gap:0;max-width:320px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.dots::-webkit-scrollbar{display:none}
+.dots button{flex:0 0 24px;width:24px;height:32px;padding:0;border:0;background:transparent;display:grid;place-items:center}
+.dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#c4cdd2}
+.dots button.active::before{width:11px;height:11px;background:#205e61}
+.dots{scroll-behavior:smooth}
+.dots button::before{transition:width .2s ease,height .2s ease,background-color .2s ease,transform .2s ease}
+.dots button:hover::before{transform:scale(1.2)}
+@media(prefers-reduced-motion:reduce){.dots{scroll-behavior:auto}.dots button::before{transition:none;animation:none!important}}
+.dots button:focus-visible{outline:3px solid #dc9a36;outline-offset:-3px}
+nav{justify-content:center}
+</style>
+<link rel="stylesheet" href="prompt.css?v=1">
+<link rel="stylesheet" href="section-summary.css?v=1">
+<link rel="stylesheet" href="images.css">
+<header class="section-header"><h2 class="section-title">5. Video Generation Qualitative Baseline Comparisons</h2></header>
+<p class="section-summary">We compare our video model with full-resolution Wan2.1 and token-reduction baselines alongside the Level-of-Token layout. Full video playback makes it possible to inspect motion, temporal consistency, and visual detail beyond the paper’s sampled frames.</p>
+<nav><button id="prev">← Previous</button><div id="dots" class="dots" aria-label="Choose a comparison"></div><button id="next">Next →</button><button id="play">Play / pause all</button><button id="restart">Restart all</button></nav>
+<div id="panels" class="panels"></div><p id="error" role="alert"></p>
+<details class="generation-prompt" id="prompt-details" hidden><summary>Generation prompt</summary><p id="prompt"></p></details>
+<script>
+let rows=[],filtered=[],index=0,videos=[],epoch=0,onscreen=false,userPaused=false,overlayCleanups=[];
+const $=id=>document.getElementById(id);
+function play(){if(!onscreen||document.hidden||userPaused)return;videos.forEach(v=>v.play().catch(()=>{$('error').textContent='If playback is blocked, use Play / pause all.'}))}
+function pause(){videos.forEach(v=>v.pause())}
+const gridCache=new Map();
+async function overlayPaths(row,dense){
+ const key=dense?'dense':row.id;if(gridCache.has(key))return gridCache.get(key);
+ const pending=(async()=>{const paths=[];
+ if(dense){const p=new Path2D();for(let y=0;y<45;y++)for(let x=0;x<80;x++)p.rect(x*16+.5,y*16+.5,Math.min(16,1279-x*16),Math.min(16,719-y*16));p.tintFills=[new Path2D()];p.tintFills[0].rect(0,0,1280,720);return Array(21).fill(p)}
+ const g=row.token_grid;if(!g)throw Error('Exact token grid unavailable');
+ const bytes=Uint8Array.from(atob(g.leaves),c=>c.charCodeAt(0)),stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+ const leaves=new Uint8Array(await new Response(stream).arrayBuffer());
+ for(let t=0;t<21;t++){const p=new Path2D();p.tintFills=Array.from({length:7},()=>new Path2D());for(let j=g.offsets[t];j<g.offsets[t+1];j++){const [y0,y1,x0,x1]=leaves.subarray(j*4,j*4+4);const k=Math.min(6,Math.max(0,Math.round(Math.log2((y1-y0)*(x1-x0)))));p.tintFills[k].rect(x0*16,y0*16,(x1-x0)*16,(y1-y0)*16);p.rect(x0*16+.5,y0*16+.5,Math.min(x1*16,1279)-x0*16,Math.min(y1*16,719)-y0*16)}paths.push(p)}return paths})();
+ gridCache.set(key,pending);try{return await pending}catch(e){gridCache.delete(key);throw e}
+}
+function addOverlay(v,f,stage,row,name){
+ const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;canvas.hidden=true;canvas.setAttribute('aria-hidden','true');stage.append(canvas);
+ const button=document.createElement('button');button.className='overlay-toggle';button.textContent='Token overlay: off';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',`Toggle token overlay for ${name}`);button.title=name==='Dense Wan2.1'?'Dense 1×1 token grid':'Exact VRS grid used by this generation';button.title+='; show or hide token overlay.';if(name!=='Layout cue')f.append(button);
+ const ctx=canvas.getContext('2d');let enabled=0,disposed=false,paths=null,callback=null,timer=null,last=-1;
+ function draw(time=v.currentTime){if(!enabled||disposed||!paths)return;const frame=Math.min(80,Math.max(0,Math.floor(time*15+1e-5))),t=frame===0?0:1+Math.floor((frame-1)/4);if(t===last)return;last=t;ctx.clearRect(0,0,1280,720);if(enabled===2)paths[t].tintFills.forEach((p,k)=>{ctx.fillStyle=['rgba(240,194,32,.24)','rgba(146,177,38,.24)','rgba(51,160,44,.24)','rgba(53,143,114,.24)','rgba(55,126,184,.24)','rgba(104,102,174,.24)','rgba(152,78,163,.24)'][k];ctx.fill(p)});ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=4;ctx.stroke(paths[t]);ctx.strokeStyle='rgba(15,15,15,.95)';ctx.lineWidth=1.3;ctx.stroke(paths[t])}
+ function tick(now,meta){draw(meta.mediaTime);if(!disposed)callback=v.requestVideoFrameCallback(tick)}
+ if(v.requestVideoFrameCallback)callback=v.requestVideoFrameCallback(tick);else timer=setInterval(()=>draw(),50);
+ const redraw=()=>draw();v.addEventListener('seeked',redraw);v.addEventListener('timeupdate',redraw);
+ button.onclick=async()=>{enabled=enabled?0:2;button.setAttribute('aria-pressed',String(enabled>0));button.textContent='Token overlay: '+(enabled?'on':'off');canvas.hidden=!enabled;if(enabled){try{paths=await overlayPaths(row,name==='Dense Wan2.1');last=-1;draw()}catch(e){enabled=false;canvas.hidden=true;button.setAttribute('aria-pressed','false');button.textContent='Token overlay unavailable';$('error').textContent=e.message}}}; if(name==='Layout cue'){button.hidden=true;enabled=1;canvas.hidden=false;overlayPaths(row,false).then(p=>{paths=p;draw()}).catch(e=>$('error').textContent=e.message);}
+ overlayCleanups.push(()=>{disposed=true;clearInterval(timer);if(callback!==null&&v.cancelVideoFrameCallback)v.cancelVideoFrameCallback(callback);v.removeEventListener('seeked',redraw);v.removeEventListener('timeupdate',redraw)});
+}
+function render(){epoch++;const version=epoch;overlayCleanups.forEach(f=>f());overlayCleanups=[];pause();videos.forEach(v=>{v.removeAttribute('src');v.load()});videos=[];$('panels').replaceChildren();$('error').textContent='';filtered=rows;index=Math.max(0,Math.min(index,filtered.length-1));const r=filtered[index];if(!r)return;const dots=$('dots');if(!dots.children.length)filtered.forEach((row,j)=>{const b=document.createElement('button');b.setAttribute('aria-label',`Show comparison ${j+1}`);b.onclick=()=>{index=j;render()};dots.append(b)});Array.from(dots.children).forEach((b,j)=>{b.classList.toggle('active',j===index);b.setAttribute('aria-pressed',String(j===index))});const left=index*24,right=left+24,start=dots.scrollLeft,width=dots.clientWidth;if(left<start||right>start+width)dots.scrollTo({left:Math.max(0,left<start?left:right-width),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+$('prompt').textContent=r.prompt||'';$('prompt-details').hidden=!r.prompt;
+for(const [name,url] of Object.entries(r.videos)){const f=document.createElement('figure'),c=document.createElement('figcaption'),v=document.createElement('video'),stage=document.createElement('div');stage.className='stage';c.textContent=name==='Layout cue'?'Level of Token layout (derived from texture variance)':name==='Dense Wan2.1'?'Full Res. Wan2.1':name;v.src=url;v.controls=true;v.muted=true;v.defaultMuted=true;v.playsInline=true;v.loop=true;v.preload='auto';v.addEventListener('error',()=>{$('error').textContent=`Could not load ${name}. Please reload.`});stage.append(v);f.append(c,stage);
+if(name==='Layout cue'){addOverlay(v,f,stage,r,name);const scale=document.createElement('div');scale.className='cue-colorbar';scale.setAttribute('aria-label','Texture variance: low to high');scale.innerHTML='<span>Low</span><span class="legend"></span><span>High</span>';f.append(scale);const value=r.method_stats?.Ours?.compression;if(Number.isFinite(value)){const label=document.createElement('div');label.style.cssText='padding:10px;font-size:14px;line-height:1.6;text-align:center';label.textContent=`${value.toFixed(2)}× token compression`;f.append(label)}}
+if(name!=='Layout cue'&&r.method_stats?.[name])addOverlay(v,f,stage,r,name);$('panels').append(f);videos.push(v)}
+Promise.all(videos.map(v=>new Promise(resolve=>{if(v.readyState>=3)resolve();else{v.addEventListener('canplay',resolve,{once:true});v.addEventListener('error',resolve,{once:true})}}))).then(()=>{if(version===epoch)play()});
+const lead=videos.at(-1);lead.addEventListener('timeupdate',()=>{for(const v of videos)if(v!==lead&&v.readyState>=2&&Math.abs(v.currentTime-lead.currentTime)>.16)v.currentTime=lead.currentTime});lead.addEventListener('seeked',()=>videos.forEach(v=>{if(v!==lead&&v.readyState>=2)v.currentTime=lead.currentTime}));}
+$('prev').onclick=()=>{index=(index-1+filtered.length)%filtered.length;render()};$('next').onclick=()=>{index=(index+1)%filtered.length;render()};$('play').onclick=()=>{userPaused=videos.some(v=>!v.paused);userPaused?pause():play()};$('restart').onclick=()=>{videos.forEach(v=>v.currentTime=0);userPaused=false;play()};
+new IntersectionObserver(entries=>{onscreen=entries[0].isIntersecting;onscreen?play():pause()},{threshold:.1}).observe($('panels'));
+document.addEventListener('visibilitychange',()=>document.hidden?pause():play());
+const renderLoaded=render;let navigationTicket=0;
+render=async function(){const ticket=++navigationTicket;if(videos.length)await MediaPreload.prepare(rows[index]?.videos,$('panels'));if(ticket!==navigationTicket)return;MediaPreload.busy($('panels'),false);renderLoaded();MediaPreload.enqueue([rows[(index+1)%rows.length]?.videos,rows[(index-1+rows.length)%rows.length]?.videos],$('panels'))};
+fetch('comparisons.json').then(r=>{if(!r.ok)throw Error('Could not load comparisons');return r.json()}).then(d=>{rows=d.items;filtered=rows;render()}).catch(e=>$('error').textContent=e.message);
+new ResizeObserver(()=>{if(window.parent!==window)window.parent.postMessage({type:'comparison-height',height:document.body.getBoundingClientRect().height},location.origin)}).observe(document.body);
+</script></html>

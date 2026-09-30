@@ -1,0 +1,73 @@
+{
+  "background_token_shape": [
+    8,
+    8
+  ],
+  "regions": [
+    {
+      "name": "Floor and rug",
+      "bbox_pixels_yxyx": [
+        832,
+        0,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Window and curtain",
+      "bbox_pixels_yxyx": [
+        64,
+        1280,
+        512,
+        1488
+      ],
+      "token_shape": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "Linen bed",
+      "bbox_pixels_yxyx": [
+        384,
+        416,
+        976,
+        1168
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Cabinet and accessories",
+      "bbox_pixels_yxyx": [
+        416,
+        80,
+        848,
+        368
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Leafy plant",
+      "bbox_pixels_yxyx": [
+        256,
+        1216,
+        896,
+        1536
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    }
+  ]
+}

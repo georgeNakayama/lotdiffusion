@@ -1,0 +1,99 @@
+{
+  "background_token_shape": [
+    8,
+    8
+  ],
+  "regions": [
+    {
+      "name": "Oak tabletop",
+      "bbox_pixels_yxyx": [
+        560,
+        0,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "Linen cloth",
+      "bbox_pixels_yxyx": [
+        768,
+        704,
+        1008,
+        960
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Ceramic vase",
+      "bbox_pixels_yxyx": [
+        496,
+        288,
+        848,
+        480
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Wildflowers",
+      "bbox_pixels_yxyx": [
+        96,
+        144,
+        528,
+        768
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Fruit bowl",
+      "bbox_pixels_yxyx": [
+        592,
+        1040,
+        864,
+        1456
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Figs and citrus",
+      "bbox_pixels_yxyx": [
+        496,
+        1056,
+        736,
+        1424
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Fallen petal",
+      "bbox_pixels_yxyx": [
+        800,
+        768,
+        864,
+        864
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    }
+  ]
+}

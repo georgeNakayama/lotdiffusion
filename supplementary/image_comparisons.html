@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>6. Image Generation Qualitative Baseline Comparisons</title>
+<script src="media-preload.js"></script><script src="grid-lines.js?v=1"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:22px;background:#f7f8fa;color:#17232c;font:16px/1.55 system-ui,sans-serif}.section-header{padding-top:26px;padding-bottom:16px}.section-title{font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1.55;margin:8px 0}nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}button{font:inherit;padding:8px 14px;background:white;border:1px solid #c7ceca;border-radius:6px;cursor:pointer}.panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}figure{margin:0;min-width:0;background:white;border-radius:7px;overflow:hidden}figcaption{font-size:20px;font-weight:700;text-align:center;padding:14px 8px;min-height:76px;display:flex;align-items:center;justify-content:center}.stage{position:relative}.stage img{display:block;width:100%;aspect-ratio:1;object-fit:contain;cursor:zoom-in}.stats{text-align:center;color:#63717d;font-size:14px;padding:12px 8px}.generation-prompt{background:white;border:1px solid #dce1e5;border-radius:8px;padding:12px 16px;margin:18px 0}.generation-prompt summary{cursor:pointer;font-weight:600}.generation-prompt p{white-space:pre-wrap;margin:12px 0 0}.dots{display:flex;flex-wrap:nowrap;gap:0;max-width:320px;overflow-x:auto;scrollbar-width:none;align-items:center;scroll-behavior:smooth}.dots::-webkit-scrollbar{display:none}.dots button{flex:0 0 24px;width:24px;height:32px;padding:0;border:0;background:transparent;display:grid;place-items:center}.dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#c4cdd2;transition:width .2s,height .2s,background-color .2s}.dots button.active::before{width:11px;height:11px;background:#205e61}button:focus-visible{outline:3px solid #dc9a36;outline-offset:-3px}dialog{border:0;padding:12px;max-width:96vw;max-height:96vh}dialog img{display:block;max-width:90vw;max-height:85vh}dialog::backdrop{background:#000b}#error{color:#a20}@media(max-width:650px){.panels{grid-template-columns:repeat(2,minmax(0,1fr))}.section-title{font-size:30px}}@media(max-width:420px){.panels{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){.dots{scroll-behavior:auto}.dots button::before{transition:none}}
+.panels{grid-template-columns:repeat(4,minmax(0,1fr))}
+.panels>figure:nth-child(1){grid-column:2;grid-row:1}
+.panels>figure:nth-child(2){grid-column:3;grid-row:1}
+.panels>figure:nth-child(n+3){grid-row:2}
+@media(max-width:650px){.panels{grid-template-columns:repeat(2,minmax(0,1fr))}.panels>figure:nth-child(n){grid-column:auto;grid-row:auto}}
+@media(max-width:420px){.panels{grid-template-columns:1fr}}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.overlay-toggle{display:block;margin:8px auto 12px;font-size:14px}
+.overlay-toggle[aria-pressed="true"]{background:#205e61;color:white}
+.cue-colorbar{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;color:#63717d;font-size:13px}
+.cue-colorbar i{flex:1;max-width:260px;height:9px;background:linear-gradient(90deg,#000,#f00,#ff0,#fff)}
+nav{justify-content:center}
+</style>
+<link rel="stylesheet" href="prompt.css?v=1">
+<link rel="stylesheet" href="section-summary.css?v=1">
+<link rel="stylesheet" href="images.css">
+<header class="section-header"><h2 class="section-title">6. Image Generation Qualitative Baseline Comparisons</h2></header>
+<p class="section-summary">We compare our image model with full-resolution FLUX.2 and token-reduction baselines alongside the Level-of-Token layout. These additional examples let readers inspect fine detail and visual artifacts across a broader set of prompts than the paper can show.</p>
+<nav><button id="prev">← Previous</button><div id="dots" class="dots" aria-label="Choose an image comparison"></div><button id="next">Next →</button></nav>
+<div id="panels" class="panels"></div><p id="error" role="alert"></p>
+<details class="generation-prompt"><summary>Generation prompt</summary><p id="prompt"></p></details>
+<dialog id="zoom"><button id="close">Close</button><img id="large" alt="Enlarged comparison image"></dialog>
+<script>
+'use strict';
+let rows=[],index=0;const $=id=>document.getElementById(id);
+function panel(label,url,stats){const f=document.createElement('figure'),caption=document.createElement('figcaption'),stage=document.createElement('div'),im=document.createElement('img'),info=document.createElement('div');caption.textContent=label;stage.className='stage';im.src=url;im.alt=label;im.decoding='async';im.onclick=()=>{$('large').src=im.src;$('large').alt=label;$('zoom').showModal()};stage.append(im);info.className='stats';info.textContent=stats;f.append(caption,stage);if(stats)f.append(info);$('panels').append(f)}
+function render(){if(!rows.length)return;const r=rows[index];$('panels').replaceChildren();panel('Level of Token layout (derived from texture variance)',r.layout,`${r.compression.toFixed(2)}× compression`);for(const m of r.methods)panel(m.name,m.image,'');$('prompt').textContent=r.prompt;[...$('dots').children].forEach((b,i)=>{b.classList.toggle('active',i===index);b.setAttribute('aria-pressed',String(i===index))});const dot=$('dots').children[index];if(dot){const rail=$('dots');if(dot.offsetLeft<rail.scrollLeft||dot.offsetLeft+24>rail.scrollLeft+rail.clientWidth)rail.scrollTo({left:Math.max(0,dot.offsetLeft-rail.clientWidth/2),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}}
+function move(d){if(rows.length){index=(index+d+rows.length)%rows.length;render()}}
+function addTokenOverlay(figure,method){
+ const stage=figure.querySelector('.stage'),im=stage.querySelector('img'),canvas=document.createElement('canvas'),button=document.createElement('button');
+ canvas.width=canvas.height=1024;canvas.hidden=true;canvas.setAttribute('aria-hidden','true');stage.append(canvas);
+ button.className='overlay-toggle';button.textContent='Token overlay: off';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',`Toggle token overlay for ${method.name}`);figure.append(button);
+ const ctx=canvas.getContext('2d');let drawn=false;
+ button.disabled=!method.token_grid;if(button.disabled)button.title='Preparing exact token grid';
+ button.onclick=()=>{if(!drawn){
+  const colors=['#f0c220','#a7bc26','#33a02c','#359777','#377eb8','#685b9c','#984ea3'];
+  ctx.globalAlpha=.24;for(const [y0,y1,x0,x1] of method.token_grid){const k=Math.min(6,Math.max(0,Math.round(Math.log2((y1-y0)*(x1-x0)))));ctx.fillStyle=colors[k];ctx.fillRect(x0*16,y0*16,(x1-x0)*16,(y1-y0)*16)}
+  ctx.globalAlpha=1;ctx.strokeStyle='rgba(20,20,20,.8)';ctx.lineWidth=1;ctx.beginPath();for(const [y0,y1,x0,x1] of method.token_grid)ctx.rect(x0*16+.5,y0*16+.5,(x1-x0)*16-1,(y1-y0)*16-1);GridLines.stroke(ctx);drawn=true;
+ }canvas.hidden=!canvas.hidden;button.textContent=canvas.hidden?'Token overlay: off':'Token overlay: on';button.setAttribute('aria-pressed',String(!canvas.hidden))};
+ im.onclick=()=>{if(canvas.hidden){$('large').src=im.src}else{const merged=document.createElement('canvas');merged.width=merged.height=1024;const c=merged.getContext('2d');c.drawImage(im,0,0,1024,1024);c.drawImage(canvas,0,0);$('large').src=merged.toDataURL('image/png')}$('large').alt=method.name;$('zoom').showModal()};
+}
+const renderImages=render;
+render=function(){renderImages();if(!rows.length)return;const figures=[...$('panels').children];const legend=document.createElement('div');legend.className='cue-colorbar';legend.innerHTML='<span>Low</span><i aria-label="Texture variance color scale"></i><span>High</span>';figures[0].append(legend);const cueStage=figures[0].querySelector('.stage'),cueCanvas=document.createElement('canvas');cueCanvas.width=cueCanvas.height=1024;cueStage.append(cueCanvas);const cc=cueCanvas.getContext('2d'),cp=new Path2D(),ours=rows[index].methods.find(m=>/ours|lot/i.test(m.name));if(ours?.token_grid){for(const [y0,y1,x0,x1] of ours.token_grid)cp.rect(x0*16+.5,y0*16+.5,(x1-x0)*16-1,(y1-y0)*16-1);GridLines.stroke(cc,cp);}rows[index].methods.forEach((m,i)=>addTokenOverlay(figures[i+1],m))};
+$('prev').onclick=()=>move(-1);$('next').onclick=()=>move(1);$('close').onclick=()=>$('zoom').close();
+document.addEventListener('keydown',e=>{
+ if(e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.repeat||e.target.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)||$('zoom').open)return;
+ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(e.key==='ArrowLeft'?-1:1)}
+});
+window.addEventListener('message',e=>{
+ if(e.source!==window.parent||e.origin!==location.origin||e.data?.type!=='image-comparison-navigate'||$('zoom').open)return;
+ if(e.data.direction===-1||e.data.direction===1)move(e.data.direction);
+});
+const renderLoaded=render;let navigationTicket=0;
+render=async function(){const ticket=++navigationTicket;if($('panels').children.length)await MediaPreload.prepare(rows[index],$('panels'));if(ticket!==navigationTicket)return;MediaPreload.busy($('panels'),false);renderLoaded();MediaPreload.enqueue([rows[(index+1)%rows.length],rows[(index-1+rows.length)%rows.length]],$('panels'))};
+fetch('image_comparisons.json?v=remove-palette-1').then(r=>{if(!r.ok)throw Error('Image comparisons unavailable');return r.json()}).then(d=>{rows=d.items;rows.forEach((r,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',`Show comparison ${i+1}`);b.onclick=()=>{index=i;render()};$('dots').append(b)});render()}).catch(e=>$('error').textContent=e.message);
+new ResizeObserver(()=>{if(window.parent!==window)window.parent.postMessage({type:'image-comparison-height',height:document.body.getBoundingClientRect().height},location.origin)}).observe(document.body);
+</script></html>

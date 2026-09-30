@@ -1,0 +1,11 @@
+{
+  "prompt": "Photorealistic formal studio head-and-shoulders portrait of a middle-aged man with warm medium-brown skin, a long oval face, short tightly curled dark hair with a few gray strands, brown eyes, prominent dark eyebrows, slightly prominent ears, a straight broad nose, and a calm closed-mouth expression with a subtle smile. He looks directly into the camera. He wears a dark navy tailored suit jacket, pale blue dress shirt, and blue silk tie with narrow diagonal cream and gold stripes. Square composition: centered symmetrical pose, the top of his hair near the upper edge, eyes about 38 percent down the frame, mouth about 57 percent down, chin about 70 percent down, shoulders and tie filling the lower quarter; generous plain light-gray background on both sides of the head. Soft even studio lighting, natural skin pores, crisp eyes and eyelashes, individually resolved short curls, realistic fabric and silk. Professional editorial portrait photography, neutral colors, no text, no logos.",
+  "steps": 50,
+  "cfg_scale": 4,
+  "orthogonal_guidance": 1,
+  "seed": 42,
+  "resolution": 1024,
+  "grid_source": "Painted",
+  "softness": 1.5,
+  "overall_detail": 1
+}

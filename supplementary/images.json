@@ -1,0 +1,1116 @@
+{
+  "format": "image-final-project-showcase-v1",
+  "selection_sha256": "442f0f558f740a102ace8401be4bdbb6db1a6922b4bd439b3cdb3d0e91be85a6",
+  "checkpoint_step": 24500,
+  "sources": [
+    "sam3_mask",
+    "sam3_box",
+    "vrs",
+    "dof"
+  ],
+  "items": [
+    {
+      "image_id": "000000000042",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000042_v02__sam3_mask",
+          "tokens": 1351,
+          "compression": 3.0318282753515913,
+          "grid_sha256": "fe9e04d547b1e1d6acd9999a77fa5aaf444e8f07612a1f51668a6890f2a79673",
+          "media": {
+            "cue": "assets/e17ac2008a49d286d1d793c44b7af580756fcd759a8b210934c3734229c1a6f9.webp",
+            "grid": "assets/56d0920a9a81ae16a55e3ce2b706f70c5acb7faf163c0f35f3928eef6a929f98.webp",
+            "generated": "assets/1a573443a1058383d4ab2a37b8ec623c44a73f1f630597a4fc9f831dc986da75.webp",
+            "generated_4b": "assets/363bec00068d980d1ea146c6b2b307db135e287728241bc4feaff961d03deae7.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000042_v03__sam3_box",
+          "tokens": 2320,
+          "compression": 1.7655172413793103,
+          "grid_sha256": "5a5eefdda45b4b7cbac364a592a0daaf61b6c778414a734c512e7fe5596b3874",
+          "media": {
+            "cue": "assets/1f1fa461f5d7476531530a7b32b474d8006e86fe66ba02b7a763da77f82f6534.webp",
+            "grid": "assets/19d764e7b7d104e7708cf3e09f0e6dab5ec46e5bb7114fd30528e14acb0af1df.webp",
+            "generated": "assets/9ebf1a349a65ee345e26401ff3bea73c926c52573b19aa660e144caa0486c02d.webp",
+            "generated_4b": "assets/7feb61f5a0c6199af78174739af4a6be0df41cf32bc9aa3630fe95ca53d787ca.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.2783203,
+              0.0859375,
+              1,
+              0.5986328
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000042_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "8d43450a3791b45a7fb3d99dfe929ed91d3e5307ee78e2de5d64a894155935b4",
+          "media": {
+            "cue": "assets/70f03140e8e061e70747c06089e1bbfc4e83461e9eac192cc00c08a23e72444b.webp",
+            "grid": "assets/5f6f0e7b6aa473c5f8d5786eb89ff8035b7f1059d2712a818b950bde17c22d41.webp",
+            "generated": "assets/ca2987bf47757775202b422122f6e7974242cc4341ec645e513b8784643a7d99.webp",
+            "generated_4b": "assets/b8a38fa888cc2652a1d2d92941242529be251260c6293d58066c52568d203143.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000042_v03__dof",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "b5891579a4b6dc741755e7827f6429b156ea0a750e5feb86345c4aa94e351f51",
+          "media": {
+            "cue": "assets/39d852b6b3ddd5a369d889a665d30647b1d8b9a0675d79f8608334eb454f87fd.webp",
+            "grid": "assets/445afae82198368bee63404390fe2762eb795f35b2f8d1f1d87430c03bcb419a.webp",
+            "generated": "assets/0c8a5934f323bf5b29e446906cb8de36bb0c2541a32e36ee6ecd8056a4f040a6.webp",
+            "generated_4b": "assets/c774fafbeafa54b2d6be7918da27eff9399220b328a9a792af73380d93fa463f.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.8298217058181763,
+              2.325951099395752
+            ]
+          }
+        }
+      },
+      "prompt": "a dog, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000034",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000034_v01__sam3_mask",
+          "tokens": 703,
+          "compression": 5.826458036984353,
+          "grid_sha256": "0d19a22d7d72a9d46049a4ac61e62455c5c10ff13ccb10d93a9ca4abcd120f6d",
+          "media": {
+            "cue": "assets/4ece22c5171f06d0c811cfeabeed7027ffe0a488635b5c7405fe3a4a5ccb3860.webp",
+            "grid": "assets/7ab2312bb9cba96c9da5f99feac618fe49ed2274b5fa0b501de16dc4122f389f.webp",
+            "generated": "assets/9c45c69ab744429ac276a3c67977e73808a2527ad1160231dedb5da3af8edba3.webp",
+            "generated_4b": "assets/d11a9ad47d256d59a8da9fdb3b3b3ef5ce95eeecb8682d588b927940a7d1166e.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000034_v01__sam3_box",
+          "tokens": 880,
+          "compression": 4.654545454545454,
+          "grid_sha256": "3a28bae83c3ef9ac1135e3b71d0d670b5fc0659acbddf701168fbdd6c31f2139",
+          "media": {
+            "cue": "assets/dedf105c4c5a451a98e5802c4da2bf4587c5faabe3fa9d22f37f2fe0933a84a7.webp",
+            "grid": "assets/1e5f064f54a2b00deae8af10691df681de450d57ba8a5e4098777df0b8938cb3.webp",
+            "generated": "assets/0fa6f9c7ccc9066aa14cf2f176b9d898c77e0f8ccd6b624a0bab68875eff9901.webp",
+            "generated_4b": "assets/d5b245ec128949a75c751182b86462f05e2acf264812a5d3877ba7dee85862a9.webp"
+          },
+          "boxes_normalized": [
+            [
+              0,
+              0.046875,
+              0.7910156,
+              0.9414062
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000034_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "fab37676c99e6d3c3b1b239e6ebf6103b70e216e55cdd7898f0417e416510852",
+          "media": {
+            "cue": "assets/2f04a61e17f8f3bff280e77d1d8d58e84e18867650d9f3b4c69b1364d3c87686.webp",
+            "grid": "assets/4666dc4a34911dfe4308339e8061d50a4afa213bc6487c80dc1e4fde1d7ae05c.webp",
+            "generated": "assets/0901a475a68e495e467d0691b74816426f399ebf0c119aca9ef42edf33aaa750.webp",
+            "generated_4b": "assets/bedb25612ea08eb5d599640e9041738fc20625ee2ff3fbfb7ae79375a3be0e29.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000034_v03__dof",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "710d9df42fc3438225f64afa89cb2047b269067141d29dcb6c85b5fd02a54890",
+          "media": {
+            "cue": "assets/753e8e4d1df9548e9e0ff131a6579b9fadf90407584b70a645d89e0f21f85240.webp",
+            "grid": "assets/7af384fb2007864b2a5e549abf6c9ad0d4cdef1e3478c526f40ed7d7dafad599.webp",
+            "generated": "assets/336304ad762835804fcafe2ad96b29b28bb3b3c37819e359951e91d4d75c0725.webp",
+            "generated_4b": "assets/72ac6e666954f27175a4e547ac8316e0863213d4eac50e4ba0944d908915fc99.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.07256235927343369,
+              0.2819383144378662
+            ]
+          }
+        }
+      },
+      "prompt": "a zebra, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000025",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000025_v00__sam3_mask",
+          "tokens": 385,
+          "compression": 10.638961038961039,
+          "grid_sha256": "eae2a39851b95b20d2c926ffe10c8d9a1fab8d5185a8fa21995e08abd4606f24",
+          "media": {
+            "cue": "assets/d48031117c56e872dad1b5dd64017e6177194ac9cb831560b1126091cfa74415.webp",
+            "grid": "assets/c3dd60e7990cca21bc2f30bbdb4c2cdbe443151a3e679c7c1619a84e9b2ff200.webp",
+            "generated": "assets/42e5c2c8ba56e9dbec7b839fb91bbb3761d0e30a1d3c31c655780a131207f6c7.webp",
+            "generated_4b": "assets/ad24d3835d2c90b931ab2bf35c76942d3f0630e4788e3124f0258af61ff84640.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000025_v02__sam3_box",
+          "tokens": 1300,
+          "compression": 3.1507692307692308,
+          "grid_sha256": "ed2162077ae86ecfcdec25cf6b447380ee173115bd72e0f22990b1a6a2d0cf5b",
+          "media": {
+            "cue": "assets/0b53f47565e78c1d42c7a32b4d534877493cb7e423ad360388f7856e4df9183f.webp",
+            "grid": "assets/92404ad651cfb4389a077139a199ab680bce1dc6ecf394a17010b4b97c4a7067.webp",
+            "generated": "assets/d5a50e9c0e54f1bba123ba1b3a939236fb3df38fec19040a363c459d1b12b06d.webp",
+            "generated_4b": "assets/6147b11d2634752965fbf4ff64cf2e3a1fa9a3922016db1fd7fa5b4923c14113.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.6523438,
+              0.140625,
+              1,
+              0.8408203
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000025_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "26b7bfad9e6eb8ee4487484bf966bcae886944bc485298174ceecf9884ad58bf",
+          "media": {
+            "cue": "assets/702b1c64a76fb7040faddb933c82044de7b176501f4cf8b5720470fd2b360502.webp",
+            "grid": "assets/56abf16b3838affa218b70249db832ff59b4a0ab224e97b9161bde6b396fdbac.webp",
+            "generated": "assets/f44b682a9d8fd3d574f442aef530f449251c517aef884e0d1eeb0c7e6a36e45b.webp",
+            "generated_4b": "assets/16bafe3d4ff2794a29d062d03d3d32b940b69bd925fd380a71982080986b019b.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000025_v01__dof",
+          "tokens": 1027,
+          "compression": 3.988315481986368,
+          "grid_sha256": "1fb9c1ab82f9a427126ca38104e1b635d6dfec11e6e8a7801827dcf017338195",
+          "media": {
+            "cue": "assets/173b3c0aae545e5e0135f06bb2126f93f472ddcbe9e340b420a85207b6b4b128.webp",
+            "grid": "assets/13f63062d4b4985e2c15223448eef0774f11c76796d19d30843cd7585cabdd65.webp",
+            "generated": "assets/f18f418658140729ac0c0ad12fc8ab7d6ba0fccca5bda2ab1e23a2cf7c0e812b.webp",
+            "generated_4b": "assets/b8aeac901870d0541be66b17d1bc620d22cfed18c1d2ae2e392c5de9f44b695d.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.028318583965301514,
+              0.43097642064094543
+            ]
+          }
+        }
+      },
+      "prompt": "a giraffe, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000072",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000072_v03__sam3_mask",
+          "tokens": 2125,
+          "compression": 1.927529411764706,
+          "grid_sha256": "2848fcdcd5003ca6898079656be94d70f5abf5aed630c58d85463a52616fe69a",
+          "media": {
+            "cue": "assets/f267a1716448c127c727031b1ffff6fa9c01e76d9e9573e641a427929b6b87db.webp",
+            "grid": "assets/ee8cf8a0495e7eef8d34f7dcd4ed7c7bae2ba95d6a9deebd3a149789e7404513.webp",
+            "generated": "assets/06cb56041eea6e38bdf679217c4ccc31a6db098eecf80659ff1ad3a458f9edb3.webp",
+            "generated_4b": "assets/ceec0504d4773c302ced9ee4c252015406e560b7d298cb4a2ad4b7573877ec4c.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000072_v03__sam3_box",
+          "tokens": 3070,
+          "compression": 1.3342019543973942,
+          "grid_sha256": "a3e69ef3e58d75c8ee3759d7e70efe4f79bcd8f694299400a8cb8949e76f3701",
+          "media": {
+            "cue": "assets/d23168cc4bdbc365776b0ea79df32eb13eb21ecc10cb6151a5a706edc5239983.webp",
+            "grid": "assets/bfafc2183774b9b985d3b9c58d4a5ed70aaeaa381b838db17bfbbdf67749b2b9.webp",
+            "generated": "assets/b17415b0ded7d1b1161c08006207cb3891fee55eaef050ff34920c517b1dac1d.webp",
+            "generated_4b": "assets/1b0990d8858224cb0143e791c80301e2d9e24a827d106e456a6b90144ed33422.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.3183594,
+              0.0537109,
+              0.9980469,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000072_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "d4a72daf45ab30994005a36849a2834e5e21bc287d94da48306195caa65a9c83",
+          "media": {
+            "cue": "assets/88f8ae3e3524be48cb9440b783a6679380032af00ce5d59621bf662f137e0349.webp",
+            "grid": "assets/e4e643e1c91a88803e386aaad4b7408da22af9205a9bc30753527f9cb24a4c6d.webp",
+            "generated": "assets/b58753c83b6d82fb565bd41724c706bd9d0b37c8e6009c6ba0b71090092ed94c.webp",
+            "generated_4b": "assets/d2e63f5aaf6e1275a76ea380c4350b32eae29aa1b58c121194ca8166ad6e6e72.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000072_v03__dof",
+          "tokens": 3280,
+          "compression": 1.248780487804878,
+          "grid_sha256": "9f0f3e3b28a574406aefc5557c87da78dca92e9b4ac7941a4b94ba1f0644770d",
+          "media": {
+            "cue": "assets/7880fbbd7ee0bd59ef216b5fac6b6a75712ad652f7af480a62c47d4e69ecaaf1.webp",
+            "grid": "assets/490c8100e9951de53ec757a494fdd7fe3644275356932e3879d427701591e50e.webp",
+            "generated": "assets/57517c8c86b5e5e987b5992789867c09c48da41a60ba55af223556532aaab575.webp",
+            "generated_4b": "assets/c4d24bc9e235b265f38edfc98910799162fd9ec3bf96eabc13a17d2fe7950879.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.04180274158716202,
+              0.22397200763225555
+            ]
+          }
+        }
+      },
+      "prompt": "a giraffe, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000092",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000092_v03__sam3_mask",
+          "tokens": 2506,
+          "compression": 1.6344772545889865,
+          "grid_sha256": "73787e5dc2408a509e8afb1b4f73a9884bd8c0c9f838e64377af75ccf05425af",
+          "media": {
+            "cue": "assets/05568623094ee4d8945ae5aea8b3da7402f5b357e14a8e0bc90f436717f1c020.webp",
+            "grid": "assets/b4d34701f12e3fe49fbc4de389616900c9318e4e75610af6382351d81619847c.webp",
+            "generated": "assets/fdf637ef04f59fc98d8482558f39723d5241b19256f1c886b9053caa48e92f01.webp",
+            "generated_4b": "assets/627b10ddcbb43684685712c4988838c69baea37ffdad885162bbfc9d64dac413.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000092_v03__sam3_box",
+          "tokens": 3025,
+          "compression": 1.3540495867768596,
+          "grid_sha256": "e69bea6d12932075349d6eed001c6354ceb18696034ad5e5140b2374b3823847",
+          "media": {
+            "cue": "assets/b47ea4efa545fc0c17784fa2dbba8faac4f28ff58d8c3ff67d46c9181e128c50.webp",
+            "grid": "assets/06d577148934ec6bc9372bfa768b32295755465ac3b324b2935c2348fd0eb77f.webp",
+            "generated": "assets/f5a2dc27b24d899bdb976f337f44bf3afe8af09b54710669592bdbad413832d0.webp",
+            "generated_4b": "assets/03c9c387eb98d4121f7b3ff33127bd1fd6b6c7c45ab7b88499862ec98ffcac91.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.0449219,
+              0,
+              0.9277344,
+              0.6884766
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000092_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "6c103d527a22bb6461c81e0721bb97c32e459855889c8e2d049a73e8293fdc9d",
+          "media": {
+            "cue": "assets/16e09091ee2617f6d64251a26e2d541ae6e074ce05853520e8a64ab127870930.webp",
+            "grid": "assets/50fbb9938e0ab184df77ff90db90842406062ffd3351063d71878edfe702ca8e.webp",
+            "generated": "assets/c0f0770216f305dc953c1c4f9aeea5695c8debc060825b53491bbed13c993e83.webp",
+            "generated_4b": "assets/da76ba82ae16c31c997d676e43fa3ac868ec5ffaf59423a9ece7ae42da74e780.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000092_v03__dof",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "261baceb191ce8eca9bb0b826e23acb76223d5d8b357f13b6f4b93cb0c9bc356",
+          "media": {
+            "cue": "assets/1df48b835779054503f1f92a5afc9135510f5a44e0afdacff223c13438c3736b.webp",
+            "grid": "assets/b765a813d1859f4eb4d8aab7623ac92719a80ba82e45ceeea015cb6ba96460bd.webp",
+            "generated": "assets/d6d1524369d43070618f9503fe561fd4f6a7cd22b82cc1502e53d7eb32232a65.webp",
+            "generated_4b": "assets/05a426f4e7c8ca35f0e5bdcd16c1292580a8e17adc680a30e3255ecdb9133c50.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.6328800916671753,
+              1.3553937673568726
+            ]
+          }
+        }
+      },
+      "prompt": "a cake, appetizing food photography with soft side light, with a fork, detailed composition."
+    },
+    {
+      "image_id": "000000000113",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000113_v03__sam3_mask",
+          "tokens": 1960,
+          "compression": 2.089795918367347,
+          "grid_sha256": "7699049479999b108d2b5133e6a3729d37299070218d85a5f04b58c1bc595722",
+          "media": {
+            "cue": "assets/84f76e94326d95ed1b1d9aca65c8bf6088f0bb86cac0924733bf928b3a1df545.webp",
+            "grid": "assets/4f3307fd676ed6dc8d74912b1bf2e72ac7df2f7d7b207c4c71dc3b2101d819e3.webp",
+            "generated": "assets/c7e60266367256851f48d19cbe9719ee1b4151c76f8039ea84c433f320f54ba3.webp",
+            "generated_4b": "assets/361f6a0797c27b793132d07d86b097396ccd7c772d3abd16cff90a128fc84ac0.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000113_v03__sam3_box",
+          "tokens": 2224,
+          "compression": 1.841726618705036,
+          "grid_sha256": "ad6b382b9cade224e42b20e3bf02cc28f207acb501dd60585e8f3ccad268e2ee",
+          "media": {
+            "cue": "assets/97f7a7c3b513454e3f71144d61a30a2fe17586857a53c8f4d27d9956f26fecfe.webp",
+            "grid": "assets/94569d9959dbdc7905ba112bbf5372cdfe2bb8bc59930f08c29250f86a34de1e.webp",
+            "generated": "assets/4bbef4931d25382c6dd35f1695b179ba32af1575733c4d52330ac6fbe5f9e735.webp",
+            "generated_4b": "assets/9a7af143149b9961cee8cad2787799362f3de751e84c2c90a35aceb32386ddac.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.3554688,
+              0,
+              0.8271484,
+              0.7695312
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000113_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "0403d008fe0c4d7c40ceccf6f25584cecde8315ddb3646bfbc3f65b482831f51",
+          "media": {
+            "cue": "assets/27aca0898261ed974b0f1b7fd8e9b269a873de03c78515ae77895fe6613874e1.webp",
+            "grid": "assets/501a53c9efea955ac28a592a51d93b9cece8cec6b479f7627b57d0ecc2dfe1a1.webp",
+            "generated": "assets/cb549f917a389a94a718a119736f4b947ca43cb0f8430058a1865d17abd13607.webp",
+            "generated_4b": "assets/a5e1d4b4f181a2749029834078422f96d10c9ce6aa8c9e74b82e70da910c29b9.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000113_v03__dof",
+          "tokens": 3280,
+          "compression": 1.248780487804878,
+          "grid_sha256": "af48920f9d24db6933a663b4c65497230ce3a3c15e930a14c75452a78e42c5de",
+          "media": {
+            "cue": "assets/4bdcf66afa6069d0a112e4ac5b9a48da738090a345e3fd19881d6bc6fc7a4b78.webp",
+            "grid": "assets/de069f9b56f854f469c8feef7efc7a70c5e76893656c0de21db0b6aa150a41bb.webp",
+            "generated": "assets/0592e0ca984f9e6aceee517940631bd2891a370d7424777d2eb390ad500e9ee9.webp",
+            "generated_4b": "assets/1337f3cc752531bb475c46c0aa4d4ed917ed6401d7f7cc2334193bdc691353dd.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.3222152292728424,
+              1.0655567646026611
+            ]
+          }
+        }
+      },
+      "prompt": "a person, candid documentary photography in a natural everyday setting, with a cake, a cup, a chair, detailed composition."
+    },
+    {
+      "image_id": "000000000127",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000127_v02__sam3_mask",
+          "tokens": 1339,
+          "compression": 3.0589992531740107,
+          "grid_sha256": "a5d7d04a5af0a164f77a836e1360dd1a9432c9b4a716ac1064021ef46eca544c",
+          "media": {
+            "cue": "assets/0654332e712ab52c39b14a4e8025d90bad7b8f045307500407b0d514aaa77e7b.webp",
+            "grid": "assets/1f4bc2312183633ac0245ab6627346a85739f162e0dcd9125dd5beda16c49df4.webp",
+            "generated": "assets/1aa1a94203bb07870d85603c2ea888df293b8d67fd9814a8608af0758d41d39f.webp",
+            "generated_4b": "assets/bbc535e5ab1666b58ca33f6695599e55a5c1cd7e0c5ed4adb46665a1346f1217.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000127_v01__sam3_box",
+          "tokens": 832,
+          "compression": 4.923076923076923,
+          "grid_sha256": "f3ebb413229ea25ac786780dbc5e19e3eb7c52b469b25f0dc6eaba2cce69b8bc",
+          "media": {
+            "cue": "assets/d040624ae8446a047f461c0f124368e1e287b3fd058930a3dbaf2f1b53a74249.webp",
+            "grid": "assets/0b20820d9d1d7d83564142e19a690df218fc292e985f58b86c88d807c073bde4.webp",
+            "generated": "assets/599d22b1dbde678531054b244b520115bb7054de849a4d22cd1244c0bbd4d40d.webp",
+            "generated_4b": "assets/e2c8baa9439ae752c0e4e693af8944d2424b1eb8a093d709387a29d0ababc653.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.0585938,
+              0.3056641,
+              1,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000127_v02__vrs",
+          "tokens": 2050,
+          "compression": 1.9980487804878049,
+          "grid_sha256": "0d9dd56d9fe8aced1840e0d7015d0ba88cdd6eb7fb2928b185a104e3e4ba2bc6",
+          "media": {
+            "cue": "assets/a6e60a9a2a98efa58ff75f84d0131f1a3b43c526d49d6d21f3f02bbc0a0d7d24.webp",
+            "grid": "assets/0acb7328f9c63d20f1a2678ba2155668d22620023d2eded18b6467fee873828d.webp",
+            "generated": "assets/f0fe95ff6d5767824d76e098b1630347ec9ae67328ab0d60ac3e7b3173870d37.webp",
+            "generated_4b": "assets/ace94bc5163893125eb6e8a6dd18125e79c98b2f61bd000691c4c3c05262d9d5.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000127_v02__dof",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "2e1e29b8cf4d7ab3b919aaf6377f8db0127f4858dc9f16a7671fcfd55f8cffd1",
+          "media": {
+            "cue": "assets/902b5b078a33ebe9d229959bc914d33dee29d2021e4a94131997970c113ea61f.webp",
+            "grid": "assets/a0a880d237ba7ec7900df52c15646bf372335c637a0d4141036988b1deeed29b.webp",
+            "generated": "assets/c4b97b3c7d94ab3581e2adb32e8524539293dd6cf57afa679498b6916676d2a9.webp",
+            "generated_4b": "assets/e28ea3d4398166f6e448e54d5bd5d9d4bc4a7d46e4f3f11cddb8d33b23919a15.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.05584642291069031,
+              3.1678266525268555
+            ]
+          }
+        }
+      },
+      "prompt": "a person, candid documentary photography in a natural everyday setting, with a dining table, a handbag, a cup, detailed composition."
+    },
+    {
+      "image_id": "000000000142",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000142_v00__sam3_mask",
+          "tokens": 454,
+          "compression": 9.022026431718063,
+          "grid_sha256": "d1afddd6c7911a14c79be83092c7ef341a4704ab6e40cac6a52325ce8cb90ec6",
+          "media": {
+            "cue": "assets/d00c88c847dc71510a13c40bd370fb596efa3b578667af2da5c0d3e85f2cae7d.webp",
+            "grid": "assets/3ee8e7057fd8c231b3ff1c9293b55246903ecfa4a794ded259d661f801a4f1c7.webp",
+            "generated": "assets/3048de94041c7306e5b00068d025d4ecb9087eaf53e8a3ce64596fb11254aabd.webp",
+            "generated_4b": "assets/274eaf00bd17e98ae4b08e1ec3a27230ef4f534eab657e7672acd711409fa825.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000142_v00__sam3_box",
+          "tokens": 529,
+          "compression": 7.742911153119093,
+          "grid_sha256": "42c35aaff3719eac02c3855a4dc49e9338641fbbc15f8edc1373d8bd24252980",
+          "media": {
+            "cue": "assets/9f2f6d429fc836aabee5e3806790290097e100375f6ab09e1e6c002214adcdbe.webp",
+            "grid": "assets/b500854d86e9c9820ce7d21ca83f63949739c1ead7f425853bc7af0b3ec7d945.webp",
+            "generated": "assets/0557883547edda315008715dcafa16f7b969df099be4ac2e1126ac79caf251bf.webp",
+            "generated_4b": "assets/950d1ac48821e5edd99edbbbc23c01d7c5f33e7229ac88088d6f6de968efb983.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.1542969,
+              0.6162109,
+              0.9150391,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000142_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "6e71c09ac489859d4aa7abb19cd6161cfaf10e36c353d00e79635f7127c9959b",
+          "media": {
+            "cue": "assets/d754669697f39d3e3c530050655c387419defb69864a30b64dd48579c393c91b.webp",
+            "grid": "assets/42f2cf272f5f3acb3020f46a8438a7234891a3debf837f72c90acdefd363e446.webp",
+            "generated": "assets/4151d5b9513391ba78382a473974532d412fef153959e8af811d931befbce3b5.webp",
+            "generated_4b": "assets/c12f341bfbc71294c16b57fef92b6608764d507bc4ac6722d344849e95045edc.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000142_v01__dof",
+          "tokens": 1024,
+          "compression": 4.0,
+          "grid_sha256": "bdbfb83e4ed5b8272904d2e3afaff4960aaf7b34b1c8319a64eb519a6bc10f97",
+          "media": {
+            "cue": "assets/f50911ec6f0ed1c076d3c7e1863e2218ba7ef595c7731f1462dd238e50e8451f.webp",
+            "grid": "assets/0063b5c56d1af35464669e6b340234cac17df893e3a2f7d8ba0eaca2f57c4ca4.webp",
+            "generated": "assets/2342996681954554f437ce80cd88c51dc7aaa83554e86649dee97725bcbfce29.webp",
+            "generated_4b": "assets/c56af3b68ae8347ec09e4b3e5dbf79f7491a0413d9c8331e4f512b7e055a35b8.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              1.5136733055114746,
+              2.9029057025909424
+            ]
+          }
+        }
+      },
+      "prompt": "a sandwich, appetizing food photography with soft side light, with a bottle, a banana, a dining table, detailed composition."
+    },
+    {
+      "image_id": "000000000144",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000144_v02__sam3_mask",
+          "tokens": 1369,
+          "compression": 2.991964937910884,
+          "grid_sha256": "e19663bdd8ef0f196a313fbc7269f35dd8f0639f033b744679755cf57a5ce435",
+          "media": {
+            "cue": "assets/6b3b6f46bf21c867b1c52d6374eae8a6f7cb4b7df3d5fe8f4eaa9564b8ad8125.webp",
+            "grid": "assets/3aa7d8004d51b4ed0ebb27432140ee4837de8ae6980264ff0fd033150e118c5a.webp",
+            "generated": "assets/004cabf5798882753eabd7631857978e70a12239bb189f390a08c00b0384a5a7.webp",
+            "generated_4b": "assets/a2489d1460e1fb81cc6d67c370374f6e195819b4101e265ecc087b6fe0ef115f.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000144_v03__sam3_box",
+          "tokens": 3049,
+          "compression": 1.3433912758281403,
+          "grid_sha256": "28ed9b308c5e318d24f2d29094257ec7dc182b0e654b4431d0238d45f60cb82b",
+          "media": {
+            "cue": "assets/c88a90023145f22e307afe907a5887c50e51f656724c1795e87303a97ba8f6fe.webp",
+            "grid": "assets/3dfe833fba7ef456813e8e67d65b1eabff55dc26176dd427c3188ce2a2ff441c.webp",
+            "generated": "assets/83aa512134543d2610d5352a846d1a847558dbce65b052191edf481fd9725df9.webp",
+            "generated_4b": "assets/a4342eda195929bbd3aaaec067676f893bd59bffa5116508a96b1812001e0521.webp"
+          },
+          "boxes_normalized": [
+            [
+              0,
+              0.1650391,
+              0.7558594,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000144_v02__vrs",
+          "tokens": 2050,
+          "compression": 1.9980487804878049,
+          "grid_sha256": "7d37aaa5441a2cc5f58b728fe49c3b3f5411e904c6f78aff8e57a7ef881dda2b",
+          "media": {
+            "cue": "assets/83d9fa01947536bf224544c2ce70c06bb901fab5e15bcca4021d57f059d7ad8e.webp",
+            "grid": "assets/4a717e193d8e6e0bbb7d60ba6684edffed85604b85ff23bafddc69f36b3da753.webp",
+            "generated": "assets/c9331c42df61a987ca0daa306a9257b9b32a055f3c946ebec9a5ae34093ded1e.webp",
+            "generated_4b": "assets/56f3b07b6485b9a370a7cfa93e2231b0a5f438142bf6347309a4eac3bc385be3.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000144_v03__dof",
+          "tokens": 3280,
+          "compression": 1.248780487804878,
+          "grid_sha256": "decc79c15dce44d5d41e66f6e565fcc23e74cf8c636258b84280193b1bb441f9",
+          "media": {
+            "cue": "assets/78b5f05cf64074a7193dd7508bd44d582d0af1e81a138808f5827d145abb38a0.webp",
+            "grid": "assets/f2fecbce7d4bd2a04e3f8584ea6be90605ee152a97f9697c7c0bcf08f03b50c1.webp",
+            "generated": "assets/004a3774e69bea2988ba6a4e20cf92571e4dd92e1c0fb1564d6f6032e5344eaa.webp",
+            "generated_4b": "assets/d0ecb00a19839c5647f609e06789f66083359dc6758525d22c3ef4a1879fecca.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.03216080367565155,
+              0.31821006536483765
+            ]
+          }
+        }
+      },
+      "prompt": "a giraffe, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000154",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000154_v03__sam3_mask",
+          "tokens": 1879,
+          "compression": 2.1798829164449174,
+          "grid_sha256": "bb5b143f29690e8456a5a0078409a1837ae6fe1e6465be463f55825a823d052a",
+          "media": {
+            "cue": "assets/5cb07892eba09c5d64835b9c23ebeafc1c084922d4ffb862731d7a60ba9a2b42.webp",
+            "grid": "assets/710da7583f520966115ed1f0d0d3a1c9486069ee6e1b9db1047b935ebce5ca0d.webp",
+            "generated": "assets/ddb3dca29ace513a5ed9a5051f560ddaaa36fb6298c1cb76d5554c8a9c1472b5.webp",
+            "generated_4b": "assets/871c55fe90aefa9e9cf1bec162c4e05a842cb57838192917278722327cfdbf94.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000154_v02__sam3_box",
+          "tokens": 2062,
+          "compression": 1.9864209505334627,
+          "grid_sha256": "477dfff958c7bcbc147db9baa28153154fc0317c793f6eed192925ede335f60a",
+          "media": {
+            "cue": "assets/fff40569a3a909f50316fd980044460792c553458a834b3f1fb7929548a81fb8.webp",
+            "grid": "assets/ad58d9202d6ab0b961d19cc916d9c815824b784aab17789d0c11132f1ca8af6b.webp",
+            "generated": "assets/df145c82b816c7fd74a65bb5080ff8ca3d070f150afb1be34f897f70f8ddaf94.webp",
+            "generated_4b": "assets/3041d7ad81171b2c62e9f74940519f38301db0faa85dd994c00ab74a0ce83fe4.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.0253906,
+              0.4892578,
+              0.8476562,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000154_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "62fdacced4d66739e7427ff7ed3e9c791435015984f4639b0acffb4ea4c60a19",
+          "media": {
+            "cue": "assets/f14137c0b016c1da83296fd72c65782789969fa1bffe32711344ba30ad46c7f5.webp",
+            "grid": "assets/ba1b8425356c3aead9dab1f1d1924ff4375bf9726cdb23eb219672a687943ae7.webp",
+            "generated": "assets/f53bc001aa6b7b12a599af0abda5e986d747b80175f8d311d857b7633595b840.webp",
+            "generated_4b": "assets/a30c872ffb452a04ee28a637a46e742987a1548eca961b8c9aec0d3cdfc02e98.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000154_v03__dof",
+          "tokens": 3280,
+          "compression": 1.248780487804878,
+          "grid_sha256": "4cf940d23fa82f516c38d81db43c7a827ce9c9491c6efa348658211f17da0d6a",
+          "media": {
+            "cue": "assets/bf42dd93e4020a9c14c03203a4eec66ea9d7535217b95273f1041142575a6670.webp",
+            "grid": "assets/a54496a6b45eb396df3fa2d3c5b86f2f5f551489fbcb9964be8e5436bfed2e03.webp",
+            "generated": "assets/a9e92487077c7d0a73dcb03b66fc792e18928aa2f1d5caf8b572c6a1f366ff75.webp",
+            "generated_4b": "assets/951ba9305f1857c22ff8c570acf3a3b6654d108294332f3dffc937f65350e85c.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.01515151560306549,
+              0.21639898419380188
+            ]
+          }
+        }
+      },
+      "prompt": "a zebra, detailed wildlife photography in a natural setting, detailed composition."
+    },
+    {
+      "image_id": "000000000194",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000194_v02__sam3_mask",
+          "tokens": 3592,
+          "compression": 1.1403118040089086,
+          "grid_sha256": "bf520b55fc778381715c36e1bf6f2ea92bfbe1c42440c883434db1dd5532b12e",
+          "media": {
+            "cue": "assets/870559a630d5758b0f22e080935a7f4d9d3ace6631b4ce96c17429e9ebcbe63c.webp",
+            "grid": "assets/aa3b2f4c5b465fb4bb85b3052ce8a6181d69ebadbbbfae2dec01b57c1f4a45a4.webp",
+            "generated": "assets/ae45ec81a245b4084f291f002f630606c3bc36fc3badff17b244c4ff3f9bd793.webp",
+            "generated_4b": "assets/a864f958aadd1864ab6bc55855860f5371e758ae26db070bc34926d499637329.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000194_v02__sam3_box",
+          "tokens": 3856,
+          "compression": 1.062240663900415,
+          "grid_sha256": "3b88210c3c8c91cd61a5b2f1431af424927101c0d162ffddf648728d1c88f9df",
+          "media": {
+            "cue": "assets/51386d8cbb070be37711a0c0141b42ba340c9bea0ff0e1bf2fc86e2999ebdab0.webp",
+            "grid": "assets/5bdfd222e8d51cf8d567efb82edee0b228498d11afa18762ff185d639a658772.webp",
+            "generated": "assets/9f8903a9d95a54ce8d57c3583ee5bc70685e63f1bbfc1d59179da344a5607371.webp",
+            "generated_4b": "assets/a9c0881600d028c54341f192e45f19b5963026ec04263fca62e39a6c8259a1dd.webp"
+          },
+          "boxes_normalized": [
+            [
+              0,
+              0.0830078,
+              1,
+              0.9873047
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000194_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "3740407e6af0a536b434c8475d5ada0e6ff5f63b26bb943b96f62578f0e65569",
+          "media": {
+            "cue": "assets/ef5d7a0954c9b4d97ffa72f927b52226f8dc8b6c36ab2b4700c6e6c94157f6de.webp",
+            "grid": "assets/5a39cd411caad17924cc770df3b6202d2aae0841265166e46a987b21347fa1cc.webp",
+            "generated": "assets/1c7da190b1f682a3acce7ebb9126a07848db9f6f2a82d1f0a0112ffa170486e0.webp",
+            "generated_4b": "assets/9fd3a52a0f41ca4974a812d8b2b9d6604bb3f0dbfd13f2b765f74f338d5610ee.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000194_v03__dof",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "c1b622881677f00fb0077c49b9f0e9d74abb1791cfb955f110331d1c4f9502a2",
+          "media": {
+            "cue": "assets/f39ed8e3558d74bb70b594bf4e6081e919d740cf0e9a971a3d1547712a767626.webp",
+            "grid": "assets/78a77cbddc1bd270799fef3b51122d1679339e7eb02a9ac09ab1e0a8bffddaf7.webp",
+            "generated": "assets/8579f8a1dc64c27e90cd760f52c80cc4a9972661f7c11988fa03e6a80de3ebbe.webp",
+            "generated_4b": "assets/9f82872c33dd171f522db15ffeca6208e61c8d8c277f326619f140d79bea0d89.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.6697187423706055,
+              1.2736318111419678
+            ]
+          }
+        }
+      },
+      "prompt": "a pizza, appetizing food photography with soft side light, with a knife, detailed composition."
+    },
+    {
+      "image_id": "000000000201",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000201_v03__sam3_mask",
+          "tokens": 1513,
+          "compression": 2.7072042300066093,
+          "grid_sha256": "64351c623cc871a4c157c077225fccedeae06875366a0428a32af9900380b305",
+          "media": {
+            "cue": "assets/32c52bb8834291353828e3f9aee8d81310625803ddc161e1dfaacc1b9ac82d7e.webp",
+            "grid": "assets/af188a7db17eba11e0087d23a59f1de1e9532a41baf04e99c44c3ee169c0a1e3.webp",
+            "generated": "assets/00dbb3d34a26fe9b8aeeef01482afda97d9c20f5d065d9dce6800983ec8ddd8f.webp",
+            "generated_4b": "assets/9ab28de046a2ee189cf4551b4f9a4c0dce608a5a81af9cc789264d89c20c9ed0.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000201_v01__sam3_box",
+          "tokens": 1546,
+          "compression": 2.6494178525226393,
+          "grid_sha256": "4df19dffb768bf6d4d0e2c2069c27911e8cd146b9c954fb2c1abdeffcc55fd70",
+          "media": {
+            "cue": "assets/c2d0f841c66443b4df262dae632d811080323149637758475fb41f0620f5ccbb.webp",
+            "grid": "assets/4de0a8be6017552e588251d3a9b96fe5bb0d426b244886c7b05b05f6bd934c8f.webp",
+            "generated": "assets/a98035fc98a49e0f1cb0ba30dc40dcf8fa96d2474f21d23bf042670ee3601c5d.webp",
+            "generated_4b": "assets/b46dbf0361653e132c901895aa6a20e5afe5e29e23cdfa0a23e4377abcd5bf2f.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.5302734,
+              0.0722656,
+              0.8945312,
+              0.9228516
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000201_v02__vrs",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "c04beebdaf568177dd2763a985bbc628ec311b5aa7bd2ff17f50661a117b9ca7",
+          "media": {
+            "cue": "assets/8dce5421a9ad10f5ece89534ba94ca731cba9be1d9bd7a220c5ccf8b8b93bb7e.webp",
+            "grid": "assets/d1f5dc1fd94fbb037240d4a87a7379486ab3c4278ee608071fad4ee7582fe166.webp",
+            "generated": "assets/6dd6e7a72148bf7ffebf4535ba2701e840b4c2297a8ac87190e4e155c0047013.webp",
+            "generated_4b": "assets/a9cd01d10cee55dea5c15e17a070162b13d897a2ac610989e2626cc9fe1a7e62.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000201_v02__dof",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "69d58b3d9bac96dfe9fc89e40cdb5ecfc1e81b86d290ec871c34f8915a544352",
+          "media": {
+            "cue": "assets/ebb3ed609ef4ff2d787abe79859fa052733992dc782b9609358ed3d0a2ad13cb.webp",
+            "grid": "assets/d078258b9b323c73b386afa470daad6b923fc425f95c02300f96ebc283690fd5.webp",
+            "generated": "assets/c824d52da35da2f01bac8728c00479686545f7efd9be3fad62c196a981196110.webp",
+            "generated_4b": "assets/16f320e409d9626ad8c17b97c6727903ab432ee64043e0d5880f03f879acbb25.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.02237762324512005,
+              0.6109785437583923
+            ]
+          }
+        }
+      },
+      "prompt": "a snowboard, photorealistic editorial photography with natural light, detailed composition."
+    },
+    {
+      "image_id": "000000000283",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000283_v00__sam3_mask",
+          "tokens": 646,
+          "compression": 6.340557275541796,
+          "grid_sha256": "de85687c2fa6cc125132fbcd1c7d471d194eb71d8515631779c585bb6c0b26fe",
+          "media": {
+            "cue": "assets/da22f7b7ed569c10fe32720ea033bee7720a5b6aea17e8c55112bfc13b537ee8.webp",
+            "grid": "assets/ec342e6b3d99b73d95fb44baadf17d4c996c9a71b4ad1d35e8187041ef919a5b.webp",
+            "generated": "assets/eadc201336101c016240ce2ad4e1f02a835fe22f4b9efa245eda082cd2db4a52.webp",
+            "generated_4b": "assets/9e0e5aa8289229c8ac65a4632788d87c00e3de04832e3b467374af6b8dff4e81.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000283_v03__sam3_box",
+          "tokens": 3280,
+          "compression": 1.248780487804878,
+          "grid_sha256": "f6ce5d8944a0b76c1a7ff4373b0854a04b7370a306ae1593898a5825e21bc5a0",
+          "media": {
+            "cue": "assets/d110820d442ba6216838d04ded4fdbc9119e5cb6e407f6bcbf9b3775d81fe03c.webp",
+            "grid": "assets/47b6958d95e364f45255a39c5970d8d014076f616866f23de98ed1bd3eaa6568.webp",
+            "generated": "assets/3bc88c1db2219dce78fdc22431d1f1c575b9f705d538866d102cdd365902e227.webp",
+            "generated_4b": "assets/8bfb0148273cbcabca5ef7115350a17f4cc802f3716f6d38880d8626e9572a45.webp"
+          },
+          "boxes_normalized": [
+            [
+              0,
+              0.2431641,
+              0.9931641,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000283_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "dcc69a79bd062e9a3fc3d2bcfb9f7ba83345f47ae001e274d84bac6ed26760aa",
+          "media": {
+            "cue": "assets/e60884a93a3997a943f1b9457082dc0d4aaeb1847253eca544a508413ee03176.webp",
+            "grid": "assets/274d8c7cef0694e7da7b923974ff3db3fb50790cfef43027f243924745384315.webp",
+            "generated": "assets/9bc2cd3a318d56b2386dc59a2401a671fd290ed3357f3e275b528d4cfc164055.webp",
+            "generated_4b": "assets/b5c0141b0f71e85ecbcfe4d3f92d38c1eab71dfc7d1f7666ff2ab3b2317d33d2.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000283_v02__dof",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "f714d11cb80f79c43ecc76f773f675478734b52ff95d84a164ea1a367aa83eb7",
+          "media": {
+            "cue": "assets/49d18333dd52f96b70f83b0d1bf14515bf0d475262c0287ad708e005f1c9b7ee.webp",
+            "grid": "assets/3dbdac2b0a5325a7bee0301c1eb9b6383d6ee1f1aad7d3a54375e10256242bf2.webp",
+            "generated": "assets/d433113ddbbb65dae59260d9bd5a0ed56ff5472560e08d73fc0c33626ff4029e.webp",
+            "generated_4b": "assets/e86b075349302fb1a95183b6735a79ba149a04906be7d5d914f56743d9af9dd2.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.4009397029876709,
+              1.7341235876083374
+            ]
+          }
+        }
+      },
+      "prompt": "a dining table, photorealistic editorial photography with natural light, with a chair, a bottle, a wine glass, detailed composition."
+    },
+    {
+      "image_id": "000000000294",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000294_v03__sam3_mask",
+          "tokens": 1948,
+          "compression": 2.102669404517454,
+          "grid_sha256": "93b964a55cca7c9ee23df23f7501c26e67b160b7d798b58f2abce25b2fd54aa5",
+          "media": {
+            "cue": "assets/9b5cbd3662bd1cf9f1960c034e53e92f1ee9fba3b118ae7179486eb90c6e4327.webp",
+            "grid": "assets/2d3badaea98bc1ec2cf3f4c3e4ad869d9d92dd170b2f17659bfcf12f744ca713.webp",
+            "generated": "assets/13a6392f8fa78efdb31319258bab09aa579f91fe2b1bdb8fd9f111a02e3e1f1a.webp",
+            "generated_4b": "assets/08ffedb5b301832a8c5b386c1a1489e6038ca83d466b1e7e40a01dc1909dca59.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000294_v03__sam3_box",
+          "tokens": 2806,
+          "compression": 1.459729151817534,
+          "grid_sha256": "af81dcd2be19df9814f0845a5481ea74641834b75214db4156d8df7b426910c4",
+          "media": {
+            "cue": "assets/fcbd5d115a4dd701c138e76b02440f4d9cef0757e3111328c84c4e2a9b0c91ba.webp",
+            "grid": "assets/3eb422b480c464b91d1c92633b102d6b1f9c8e790e9d8d5d1f29b7b9288b0762.webp",
+            "generated": "assets/f36cd609c15ec792fb7b238c16aa0c80d055520ac9ac5b1d875796a44f1eb241.webp",
+            "generated_4b": "assets/32afe778b410a3a24e82b890bd903a2f248a25b61106e8757a3790e9ff19ea35.webp"
+          },
+          "boxes_normalized": [
+            [
+              0,
+              0.1611328,
+              0.671875,
+              1
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000294_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "8caf04846236e29db46941de4c5ad1d40fdba0803338a7f94c457523983534ec",
+          "media": {
+            "cue": "assets/0971625207dd9d95be804a850d0fef644dd01388b70e93a7ed6421536b072861.webp",
+            "grid": "assets/6600683f8a8d9ca194c636532c931258c6abd59b311b7a9291aec55c5e0adf32.webp",
+            "generated": "assets/08db55d7bf6742e770988257cc6d14a78d2f5cfbe9b4a3d3d5d06e282ec5d52b.webp",
+            "generated_4b": "assets/71e71cbe49df136a5da83b5b2d03bb5b8b331f7e56269f7fc17029e4414ef596.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000294_v02__dof",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "4d96ac8e69cf1a065c3d8ea0ef4c28d975a8b989d0679042922c3abd69e7b06d",
+          "media": {
+            "cue": "assets/6d0a400c3f652ba33025650b74d03eaaf9ea265c9386680479d8e44175a337e5.webp",
+            "grid": "assets/b8f052e94984052ae9b7f949ef1684c2bc3aedf9478ad6c622b12e64d377c5e3.webp",
+            "generated": "assets/95986cce3db97a3125104de1a613bf426c8c99a91503ee55e351d3fcad921496.webp",
+            "generated_4b": "assets/dae5cccf129cae1472a816789737d20cdf82efc0f3f9d0c1c2e54f4d33b91c90.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.3615819215774536,
+              0.8238133788108826
+            ]
+          }
+        }
+      },
+      "prompt": "a person, candid documentary photography in a natural everyday setting, with a spoon, a microwave, a knife, detailed composition."
+    },
+    {
+      "image_id": "000000000307",
+      "sources": {
+        "sam3_mask": {
+          "selection_id": "000000000307_v03__sam3_mask",
+          "tokens": 1348,
+          "compression": 3.0385756676557865,
+          "grid_sha256": "d87beaace55dde91fbf0bedf63dd32061a2dc81856c01976337e088bbf92fa2f",
+          "media": {
+            "cue": "assets/091bccb426c7bb5be386fc527280baf8d0afa70fcaa70788753e595fe502b1f9.webp",
+            "grid": "assets/e6c4c34da33e7e429d653c1b23b3ab00b163d168bb2fe47bc65e13ffa66cb053.webp",
+            "generated": "assets/89928922cfbae525611a0ecdb6c49cf7f921b85b1bee86ee8d89afbd947337b2.webp",
+            "generated_4b": "assets/6322effa2fd7d2ceba8adf5b2226bb4103c0ce0004ba4bc70880fbced80a7228.webp"
+          }
+        },
+        "sam3_box": {
+          "selection_id": "000000000307_v03__sam3_box",
+          "tokens": 1420,
+          "compression": 2.8845070422535213,
+          "grid_sha256": "9d39482d06ab7b22495d67c435cef6f9cfc3b164e201f28ead41e8eba44bd4c8",
+          "media": {
+            "cue": "assets/3f8091fcf5215446b794e8cd9c7d615ef8e50551a5d6ada3a44b1294d49fc34e.webp",
+            "grid": "assets/c38e3998c32057ce6c6be7fce75d8cd98d65c1bf221f9df7bb23eddf3902a041.webp",
+            "generated": "assets/535348eea3ab4b9aa5e96ad6af43eb981316b89338c7929a2887cde5fcb0f6ae.webp",
+            "generated_4b": "assets/c8d1fdf49e37f4293e7f47740a9f6582f06c7f4f8287e785ce8daddf97f49771.webp"
+          },
+          "boxes_normalized": [
+            [
+              0.6787109,
+              0.4101562,
+              1,
+              0.7626953
+            ]
+          ]
+        },
+        "vrs": {
+          "selection_id": "000000000307_v03__vrs",
+          "tokens": 3277,
+          "compression": 1.2499237107110162,
+          "grid_sha256": "07710c32e91159de53b57933bda8a7e09f93c8c3689fa1c3dcbb686ce1513124",
+          "media": {
+            "cue": "assets/f7a85436bae5f190a2647bf189b736b4e35ae6e823cf4cdb5c96807f0d559b56.webp",
+            "grid": "assets/aa5e7c91fc674064477d61d1efe74629b05448942146467e57d17c1a7f64b497.webp",
+            "generated": "assets/49a6f02724d0a419beddc0ba1677e45d9f43455ad24c4c66d569e0589fdbc721.webp",
+            "generated_4b": "assets/5ed65f053d1a11ccb27e6cead3388441808f92d0676dc6bc5d8d7dceab953f7f.webp"
+          }
+        },
+        "dof": {
+          "selection_id": "000000000307_v02__dof",
+          "tokens": 2047,
+          "compression": 2.0009770395701025,
+          "grid_sha256": "637254b5639d2cc4ecc950521573d2533cfe5b2d6ff2d64f87af1ece90b2f303",
+          "media": {
+            "cue": "assets/56ec31e3de250bc0a4d3976524e743ffcc3c044d7707740ca0242706e1182c41.webp",
+            "grid": "assets/8fb03397d4bcb092d4858ad5d7e47807eb85b029bc9186d50a0c6e64247146da.webp",
+            "generated": "assets/77247ec6637f7f4022275b721f687e3bd614538326663603c9a8aea0f41e22db.webp",
+            "generated_4b": "assets/05f2942db433c27cf24f8ca9c837e9c8a27f4e573526640e4cbe1967276a48cc.webp"
+          },
+          "cue_legend": {
+            "cmap": "turbo",
+            "low": "far",
+            "high": "near",
+            "normalization": "per-image inverse-depth p2/p98",
+            "range": [
+              0.029384756460785866,
+              1.1094257831573486
+            ]
+          }
+        }
+      },
+      "prompt": "a dog, detailed wildlife photography in a natural setting, with a frisbee, a car, detailed composition."
+    }
+  ],
+  "tokenization_renderer": "build_selected_paper_figures_clean.render_grid_clean",
+  "models": {
+    "9B": {
+      "checkpoint_step": 24500
+    },
+    "4B": {
+      "checkpoint_step": 50000
+    }
+  },
+  "removed_review_positions": [
+    1,
+    12,
+    13,
+    16,
+    20
+  ],
+  "removed_image_ids": [
+    "000000000009",
+    "000000000165",
+    "000000000192",
+    "000000000241",
+    "000000000322"
+  ]
+}

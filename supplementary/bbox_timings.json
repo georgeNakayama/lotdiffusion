@@ -1,0 +1,32 @@
+{
+  "living-room": {
+    "ours": 14.867621284909546,
+    "dense": 28.726159354206175,
+    "timing": "Warm generation including text encoding and VAE decoding; excluding model loading and file writing",
+    "gpu": "NVIDIA H100 80GB HBM3"
+  },
+  "reading-corner": {
+    "ours": 13.998565254732966,
+    "dense": 28.778532408177853,
+    "timing": "Warm generation including text encoding and VAE decoding; excluding model loading and file writing",
+    "gpu": "NVIDIA H100 80GB HBM3"
+  },
+  "bedroom": {
+    "ours": 11.856543218251318,
+    "dense": 28.777924546040595,
+    "timing": "Warm generation including text encoding and VAE decoding; excluding model loading and file writing",
+    "gpu": "NVIDIA H100 80GB HBM3"
+  },
+  "coastal": {
+    "ours": 11.612410861067474,
+    "dense": 28.774896321818233,
+    "timing": "Warm generation including text encoding and VAE decoding; excluding model loading and file writing",
+    "gpu": "NVIDIA H100 80GB HBM3"
+  },
+  "still-life": {
+    "ours": 11.548520589247346,
+    "dense": 28.789354798849672,
+    "timing": "Warm generation including text encoding and VAE decoding; excluding model loading and file writing",
+    "gpu": "NVIDIA H100 80GB HBM3"
+  }
+}

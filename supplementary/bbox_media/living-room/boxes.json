@@ -1,0 +1,118 @@
+{
+  "background_token_shape": [
+    4,
+    4
+  ],
+  "regions": [
+    {
+      "name": "Sofa",
+      "bbox": [
+        430,
+        245,
+        780,
+        745
+      ],
+      "token_shape": [
+        2,
+        2
+      ],
+      "bbox_pixels_yxyx": [
+        432,
+        368,
+        800,
+        1152
+      ]
+    },
+    {
+      "name": "Bookshelf",
+      "bbox": [
+        70,
+        35,
+        845,
+        200
+      ],
+      "token_shape": [
+        1,
+        1
+      ],
+      "bbox_pixels_yxyx": [
+        64,
+        48,
+        880,
+        320
+      ]
+    },
+    {
+      "name": "Tall plant",
+      "bbox": [
+        150,
+        790,
+        870,
+        960
+      ],
+      "token_shape": [
+        1,
+        1
+      ],
+      "bbox_pixels_yxyx": [
+        144,
+        1200,
+        896,
+        1488
+      ]
+    },
+    {
+      "name": "Coffee table",
+      "bbox": [
+        760,
+        330,
+        950,
+        680
+      ],
+      "token_shape": [
+        2,
+        2
+      ],
+      "bbox_pixels_yxyx": [
+        768,
+        496,
+        976,
+        1056
+      ]
+    },
+    {
+      "name": "Vase and pampas grass",
+      "bbox_pixels_yxyx": [
+        544,
+        880,
+        784,
+        1008
+      ],
+      "token_shape": [
+        1,
+        1
+      ],
+      "source": "Selected from generated seed 42; coordinates aligned to 16-pixel latent grid."
+    },
+    {
+      "name": "Exposed wall",
+      "bbox_pixels_yxyx": [
+        0,
+        384,
+        384,
+        1152
+      ],
+      "bbox": [
+        0,
+        250,
+        375,
+        750
+      ],
+      "token_shape": [
+        8,
+        8
+      ],
+      "source": "Assistant-selected exposed wall rectangle, aligned to 128-pixel blocks; other regions preserved."
+    }
+  ]
+}

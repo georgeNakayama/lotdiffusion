@@ -1,0 +1,14 @@
+{
+  "model": "WAN 2.1 14B mixed mask/bbox + VRS + DoF",
+  "checkpoint": "step 4000 EMA",
+  "steps": 50,
+  "cfg": 4,
+  "orthogonal_guidance": 1,
+  "seed": 42,
+  "width": 1280,
+  "height": 720,
+  "frames": 81,
+  "prompt": "A continuous live-action video showing a little girl and a Pembroke Welsh corgi actively playing in a sunny park. Locked-off wide camera, full bodies visible throughout. On the left, the girl in a red pinafore and cream shirt starts crouching, rises to a half-standing position while lifting both arms excitedly, then bends her knees and crouches again, reaching forward and laughing. On the right, the golden-and-white corgi trots several steps left toward a small red ball in the lower center, makes a clear little upward hop with its paws leaving the ground, lands, and bounces forward again. Show visible coordinated leg movement, changing body height, swinging arms, and bouncing ears and fur throughout the shot. The girl stays in the left third while the corgi moves within the right half, with a little space between them. Natural anatomy and fluid energetic motion. Textured green grass, yellow and white foreground wildflowers in both lower corners, a hedge and leafy trees across the middle background, a slender tree trunk at the far right. Smooth pale blue sky in the upper fifth. Warm morning light, realistic shadows. No cuts or zoom, no text or watermark.",
+  "negative_prompt": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+  "grid_sha256": "f4414f829823d9bc32cb1752c1082408d7691c6c9366e31174f8ca6c83a930f2"
+}

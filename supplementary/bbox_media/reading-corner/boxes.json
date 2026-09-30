@@ -1,0 +1,86 @@
+{
+  "background_token_shape": [
+    8,
+    8
+  ],
+  "regions": [
+    {
+      "name": "Floor and rug",
+      "bbox_pixels_yxyx": [
+        768,
+        0,
+        1024,
+        1536
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Bookshelf",
+      "bbox_pixels_yxyx": [
+        80,
+        80,
+        896,
+        464
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Armchair",
+      "bbox_pixels_yxyx": [
+        384,
+        992,
+        944,
+        1472
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Side table",
+      "bbox_pixels_yxyx": [
+        672,
+        560,
+        928,
+        832
+      ],
+      "token_shape": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "Flowering plant",
+      "bbox_pixels_yxyx": [
+        368,
+        608,
+        688,
+        832
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Open book",
+      "bbox_pixels_yxyx": [
+        592,
+        1296,
+        768,
+        1488
+      ],
+      "token_shape": [
+        1,
+        1
+      ]
+    }
+  ]
+}

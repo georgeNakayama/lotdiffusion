@@ -1,0 +1,65 @@
+#image-results{max-width:1480px;margin:auto;padding:40px 32px 12px}
+#image-source-results{max-width:1480px;margin:auto;padding:40px 32px 12px}
+.image-source-tabs{position:static;padding:12px 0;max-width:none;background:transparent;backdrop-filter:none}
+.image-single-source{margin:0}
+.image-single-source[hidden]{display:none!important}
+.image-single-source .image-navigation{justify-content:center;gap:10px;margin:16px 0}
+.image-source-card{margin:22px 0 32px}
+.image-single-source .image-paper{grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#e1e6e9}
+.image-single-source .image-cell{background:#fafafa}
+.image-single-source .image-col-title{font-size:20px;background:white;padding:12px;text-align:center}
+.image-single-source .image-panel img{aspect-ratio:auto;max-height:560px;object-fit:contain}
+.image-single-source .image-compression{font-size:14px;padding:10px}
+.image-single-source .image-overlay{font-size:14px;padding:8px 14px;margin:8px auto 12px}
+.image-single-source .image-dots{max-width:320px;gap:0;padding:0;scrollbar-width:none}
+.image-single-source .image-dots button{flex:0 0 24px;width:24px;min-width:24px;height:32px;border:0;background:transparent;display:grid;place-items:center}
+.image-single-source .image-dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#c4cdd2;transition:background-color .15s}
+.image-single-source .image-dots button.active::before{background:#205e61}
+.image-single-source .image-dots button.active{background:transparent}
+@media(max-width:650px){#image-source-results{padding:12px 14px 28px}.image-source-tabs{gap:6px}.image-source-tabs button{font-size:13px;padding:7px 10px}.image-single-source .image-navigation{flex-wrap:wrap}.image-single-source .image-col-title{font-size:16px}}
+.image-navigation{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0 12px}
+.image-model-toggle{display:flex;justify-content:center;gap:8px;margin:16px 0}
+.image-model-toggle button{padding:8px 24px;border:1px solid #c6ced3;border-radius:7px;background:white;color:#17232c;cursor:pointer;font-weight:600}
+.image-model-toggle button.active{background:#205e61;color:white;border-color:#205e61}
+.image-dots{display:flex;align-items:center;gap:7px;overflow-x:auto;padding:10px 4px}
+.image-dots button{padding:0;width:9px;height:9px;min-width:9px;border:0;border-radius:50%;background:#c6ced3;transition:background-color .15s}
+.image-dots button.active{background:#205e61}
+.image-paper{display:grid;grid-template-columns:85px repeat(4,minmax(0,1fr));gap:3px;background:white}
+.image-col-title{font-weight:700;text-align:center;padding:9px 0}
+.image-row-title{font-weight:700;align-self:center;writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center}
+.image-cell{min-width:0;text-align:center}
+.image-panel{display:block!important;border:0!important;border-radius:0!important;padding:0!important;width:100%;background:white}
+.image-panel img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.image-compression{font-size:13px;color:#63717d;padding:7px 2px}
+.image-depth-legend{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;color:#63717d;padding:9px 4px}
+.image-depth-gradient{display:block;width:65%;height:9px;background:linear-gradient(to right,#30123b,#4040a1,#466be3,#4193fe,#28bbeb,#17dcc2,#32f197,#6dfd62,#a4fc3b,#cdeb34,#edcf39,#fdab33,#fa7d20,#ea500d,#d02f04,#a91501,#7a0402)}
+.image-vrs-gradient{display:block;width:65%;height:9px;background:linear-gradient(to right,#000 0%,#f00 33.333333%,#ff0 66.666667%,#fff 100%);border:1px solid #d7dfe3}
+.image-overlay{font-size:13px;padding:5px 10px;margin-bottom:9px}
+/* Shared prompt component, also loaded by both comparison iframes. */
+details.generation-prompt{background:#fff;border:1px solid #dce1e5;border-radius:8px;padding:12px 16px;margin:18px 0;font:16px/1.55 system-ui,sans-serif;color:#17232c}
+details.generation-prompt>summary{cursor:pointer;font-size:16px;font-weight:600;line-height:1.55;color:#17232c}
+details.generation-prompt>summary:focus-visible{outline:3px solid #dc9a36;outline-offset:4px;border-radius:3px}
+details.generation-prompt>p{white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0 0;max-width:none;font-size:16px;font-weight:400;line-height:1.55;color:#17232c}
+.image-zoom{max-width:95vw;border:0;border-radius:8px}.image-zoom img{display:block;max-height:85vh;max-width:90vw}.image-zoom::backdrop{background:#000a}
+@media(max-width:650px){#image-results{padding:24px 14px}.image-paper{grid-template-columns:28px repeat(4,minmax(0,1fr))}.image-col-title,.image-row-title{font-size:11px}.image-compression,.image-overlay{font-size:10px}.image-overlay{padding:4px}.image-navigation{gap:8px}.image-dots{gap:5px}}
+@media(prefers-reduced-motion:reduce){.image-dots button{transition:none}}
+.image-source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+.image-source-grid>section{min-width:0;padding:14px;background:#fff;border:1px solid #dce1e5;border-radius:10px}
+.image-source-grid h3{text-align:center;margin:4px 0 12px;font-size:21px}
+.image-source-grid .image-navigation{gap:8px;flex-wrap:wrap;margin:12px 0}
+.image-source-grid .image-dots{max-width:144px}
+.image-source-grid .image-model-toggle{margin:8px 0}
+.image-source-grid .image-model-toggle button{padding:7px 12px}
+.image-source-grid .image-col-title{font-size:15px!important}
+.image-source-grid .image-panel img{max-height:300px}
+#tabs{display:none}
+#gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+#gallery .video-source-group{min-width:0;width:100%;max-width:none;margin:0;padding:12px;border:1px solid #dce1e5;border-radius:10px;background:white}
+#gallery .video-source-group h2{text-align:center;font-size:23px;margin:0 0 12px}
+#gallery .video-source-group .reel-nav{flex-wrap:wrap;justify-content:center;gap:8px}
+#gallery .video-source-group .dots{max-width:168px}
+#gallery .video-source-group .label{font-size:15px}
+#gallery .video-source-group .pair{grid-template-columns:minmax(0,1fr)}
+#gallery .video-source-group .reel-nav button{font-size:13px;padding:7px 9px}
+@media(max-width:850px){#gallery{grid-template-columns:1fr}}
+@media(max-width:850px){.image-source-grid{grid-template-columns:1fr}}

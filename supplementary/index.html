@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level-of-Token Diffusion — Supplementary Results</title>
+<script src="media-preload.js"></script><script src="grid-lines.js?v=exact-grids-2"></script>
+<style>
+:root{color-scheme:light;--ink:#17232c;--muted:#63717d;--accent:#205e61}*{box-sizing:border-box}body{margin:0;background:#f7f8fa;color:var(--ink);font:16px/1.55 system-ui,sans-serif}header,main,nav{max-width:1480px;margin:auto;padding:24px 32px}header{padding-top:48px;padding-bottom:16px}.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}h1{font-size:clamp(28px,4vw,48px);letter-spacing:-.04em;margin:8px 0}p{color:var(--muted);margin:8px 0}nav{position:sticky;top:0;z-index:3;background:#f7f8faf5;backdrop-filter:blur(8px);display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;padding-bottom:12px}button,a.pill{font:inherit;border:1px solid #d7dfe3;border-radius:8px;padding:8px 15px;background:white;color:var(--ink);cursor:pointer;text-decoration:none}button.active,button.play{background:var(--accent);border-color:var(--accent);color:white}button:focus-visible,a:focus-visible{outline:3px solid #dc9a36;outline-offset:3px}section{scroll-margin-top:90px}h2{font-size:26px;margin:8px 0 4px}article{background:white;border:1px solid #e1e6e9;border-radius:12px;overflow:hidden;margin:22px 0 32px}.caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 20px}.title{font-weight:650}.meta{font-size:13px;color:var(--muted)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e1e6e9}.panel{background:#fafafa;min-width:0}.label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;background:#f0f3f5;font-weight:650}video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#eef1f3}.controls{display:flex;align-items:center;gap:10px;padding:12px 20px;flex-wrap:wrap}.status{font-size:13px;color:var(--muted)}details{padding:0 20px 18px}summary{cursor:pointer;color:var(--accent)}details p{white-space:pre-wrap;font-size:14px;max-width:1100px}footer{padding:24px;text-align:center;color:var(--muted);font-size:13px}a{color:var(--accent)}@media(max-width:650px){header,main,nav{padding-left:14px;padding-right:14px}.pair{grid-template-columns:1fr}.caption{padding:12px}h1{font-size:30px}}
+.stage{position:relative;aspect-ratio:16/9}.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.reel-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0}.dots{display:flex;gap:5px}.dots button{padding:4px 9px;font-size:13px}.overlay-on{background:#e3f1ef;border-color:var(--accent)}.cue-legend{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 22px;padding:14px 20px;background:white;font-size:13px;border-bottom:1px solid #e1e6e9}.legend-item{display:inline-flex;align-items:center;gap:7px}.swatch{display:inline-block;width:17px;height:17px;border:1px solid #222}.colorbar{height:17px;width:clamp(150px,34vw,520px);border:1px solid #999}
+header,main,nav{max-width:1480px;width:100%;padding-left:32px;padding-right:32px}
+body>p{max-width:1480px;margin:auto;padding-left:32px;padding-right:32px}
+@media(max-width:650px){header,main,nav,body>p{padding-left:14px;padding-right:14px}}
+.token-stats{padding:10px;font-size:14px;line-height:1.6}
+.panel .cue-legend{border-bottom:0;gap:10px 14px}
+.mask-cue-note{padding:12px 18px;text-align:center;color:var(--muted);font-size:13px;line-height:1.5;background:white}
+.panel .colorbar{flex:1;min-width:60px;max-width:260px;width:auto;height:9px}
+.status:empty{display:none}
+.generation-prompt{background:white;border:1px solid #dce1e5;border-radius:8px;padding:12px 16px;margin:18px 20px}
+.generation-prompt summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.generation-prompt p{white-space:pre-wrap;margin:12px 0 0;font-size:16px;color:var(--ink)}
+.pair.cue-flow{grid-template-columns:minmax(0,.48fr) 24px minmax(0,1fr) 24px minmax(0,1fr);gap:10px;background:white;padding:18px;align-items:start}
+.cue-flow .source-panel{margin-top:34px;border:1px dashed #c4cdd2;border-radius:6px;overflow:hidden}
+.source-panel video{filter:saturate(.3);opacity:.8}
+.source-token-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 12px;padding:10px;font-size:12px;line-height:1.4;background:white}
+.source-token-legend .swatch{filter:saturate(.3);opacity:.8;flex-shrink:0}
+.cue-flow .label{text-align:center;text-transform:none;letter-spacing:0;font-size:16px;background:white}
+.flow-arrow{align-self:center;text-align:center;font-size:25px;color:#89969e}
+.token-stage>canvas{position:static;display:block;width:100%;height:auto;aspect-ratio:16/9;background:#f8f8f8}
+.token-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:12px;font-size:13px}
+.token-legend .swatch{width:17px;height:17px}
+@media(max-width:800px){.pair.cue-flow{grid-template-columns:1fr 22px 1fr}.cue-flow .source-panel{grid-column:1 / -1;max-width:200px;margin:0 auto}.cue-flow .source-arrow{grid-column:1 / -1;transform:rotate(90deg)}.cue-flow .token-panel{grid-column:1}.cue-flow .generation-panel{grid-column:3}}
+.dots{display:flex;flex-wrap:nowrap;gap:0;max-width:320px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.dots::-webkit-scrollbar{display:none}
+.dots button{flex:0 0 24px;width:24px;height:32px;padding:0;border:0;background:transparent;display:grid;place-items:center}
+.dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#c4cdd2}
+.dots button.active{background:transparent}
+.dots button.active::before{width:11px;height:11px;background:#205e61}
+.dots{scroll-behavior:smooth}
+.dots button::before{transition:width .2s ease,height .2s ease,background-color .2s ease,transform .2s ease}
+.dots button:hover::before{transform:scale(1.2)}
+@media(prefers-reduced-motion:reduce){.dots{scroll-behavior:auto}.dots button::before{transition:none;animation:none!important}}
+.section-title{font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-.04em;line-height:1.55;margin:8px 0}
+.panel .label{font-size:20px;font-weight:700;text-align:center;padding:14px 8px;min-height:76px;display:flex;align-items:center;justify-content:center;letter-spacing:normal;text-transform:none;background:white}
+.overlay-toggle{display:block;margin:8px auto 12px;font-size:14px;padding:8px 14px;border-color:#c7ceca;border-radius:6px}
+.overlay-toggle[aria-pressed="true"]{background:#205e61;color:white}
+.controls:has(.status:empty):has(.play[hidden]){display:none}
+@media(max-width:650px){.section-title{font-size:30px}}
+.reel-nav{justify-content:center}
+.paper-heading{text-align:center;padding-top:48px;padding-bottom:12px}
+.paper-heading h1{font-size:clamp(34px,5vw,60px);line-height:1.15;margin:0 0 14px}
+.paper-heading p{font-size:clamp(18px,2.5vw,24px);color:#63717d;margin:0}
+.results-index{position:static;display:block;padding-top:28px;padding-bottom:12px;background:transparent;backdrop-filter:none}
+.results-index h2{font-size:20px;margin:0 0 12px}
+.index-groups{display:flex;flex-wrap:wrap;gap:16px 36px;padding:16px 20px;border:1px solid #dce1e5;border-radius:12px;background:white}
+.index-group{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px}
+.index-group strong{font-size:14px;color:#17232c}
+.index-group a{font-size:14px;color:#205e61;text-decoration:none;padding:5px 0}
+.index-group a:hover{text-decoration:underline;text-underline-offset:4px}
+.index-return{position:fixed;right:18px;bottom:18px;z-index:5;background:#fff;border:1px solid #d7dfe3;border-radius:8px;padding:7px 12px;color:#205e61;text-decoration:none;font-size:13px;box-shadow:0 2px 8px #17232c12}
+#video-results{scroll-margin-top:24px}
+@media(max-width:650px){.index-groups{gap:12px;padding:12px}.index-group{gap:6px 12px}.index-group strong{flex-basis:100%}.index-return{right:10px;bottom:10px}}
+</style><link rel="stylesheet" href="prompt.css?v=1"><link rel="stylesheet" href="section-summary.css?v=1"></head><body>
+<link rel="stylesheet" href="images.css">
+<header class="paper-heading"><h1>Level-of-Token Diffusion</h1><p>Supplementary Results</p><p><a href="../">← Project website</a></p></header>
+<link rel="stylesheet" href="contents.css?v=larger-scrollable-2">
+<nav id="results-index" class="results-index" aria-label="On this page">
+<details id="contents-menu" open>
+<summary>On this page <span aria-hidden="true">⌄</span></summary>
+<div class="contents-tree">
+<h2>Interactive demos</h2>
+<ol>
+<li><a href="#video-demos"><span>1</span>Agent-Assisted and Manually created LoT Video Generation</a></li>
+<li><a href="#painted-demos"><span>2</span>Agent-Assisted and Manually created LoT Image Generation</a></li>
+</ol>
+<h2>Layout-adaptive results</h2>
+<ol start="3">
+<li><a href="#video-results"><span>3</span>Layout-Adaptive Video Generation</a>
+<ol><li><a href="#video-source-dof">Depth of field</a></li>
+<li><a href="#video-source-regions">Semantic masks &amp; bounding boxes</a></li>
+<li><a href="#video-source-vrs">Texture variance</a></li></ol></li>
+<li><a href="#image-source-results"><span>4</span>Layout-Adaptive Image Generation</a>
+<ol><li><a href="#image-individual-layouts"><span>4.1</span>Individual layout sources</a></li>
+<li><a href="#image-results"><span>4.2</span>Same prompt across sources</a></li>
+<li><a href="#bbox-conditioning"><span>4.3</span>Ideogram-style box layouts</a></li>
+<li><a href="#typography"><span>4.4</span>Typography and curves</a></li></ol></li>
+</ol>
+<h2>Baseline comparisons</h2>
+<ol start="5">
+<li><a href="#comparisons"><span>5</span>Video baseline comparisons</a></li>
+<li><a href="#image-comparisons"><span>6</span>Image baseline comparisons</a></li>
+</ol>
+</div>
+</details>
+</nav>
+<script src="contents.js" defer></script>
+<a class="index-return" href="#results-index" aria-label="Back to results navigation index">↑ Index</a>
+<!-- video-demos:start -->
+<section id="video-demos" aria-label="Interactive video token layout demonstrations" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="video-demo-frame" src="video_demos.html?v=abstract-box-layout-1" title="Agent-Assisted and Manually created LoT Video Generation" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1250px;border:0"></iframe></section>
+<script>window.addEventListener('message',event=>{const f=document.getElementById('video-demo-frame');if(event.source!==f.contentWindow||event.origin!==location.origin||event.data?.type!=='video-demos-height')return;const h=Number(event.data.height);if(Number.isFinite(h)&&h>0&&h<20000)f.style.height=Math.ceil(h)+'px'});</script>
+<!-- video-demos:end -->
+<!-- painted-demos:start -->
+<section id="painted-demos" aria-label="Agent-Assisted and Manually created LoT Image Generation" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="painted-demo-frame" src="painted_demos.html?v=workflow-below-results-1" title="Agent-Assisted and Manually created LoT Image Generation" loading="lazy" allow="fullscreen" style="display:block;width:100%;height:1550px;border:0"></iframe></section>
+<script>window.addEventListener('message',event=>{const f=document.getElementById('painted-demo-frame');if(event.source!==f.contentWindow||event.origin!==location.origin||event.data?.type!=='painted-demos-height')return;const h=Number(event.data.height);if(Number.isFinite(h)&&h>0&&h<20000)f.style.height=Math.ceil(h)+'px'});</script>
+<!-- painted-demos:end -->
+<header id="video-results"><h1 class="section-title">3. Layout Adaptive Video Generation — Qualitative Results</h1>
+<p class="section-summary">We derive Level-of-Token layouts from depth, semantic masks, bounding boxes, and texture variance to generate videos. These examples show how different layout sources allocate detail over time, with full video playback complementing the still frames in the paper.</p>
+</header>
+<nav id="tabs" aria-label="Layout source"></nav><main id="gallery"><p>Loading selected videos…</p></main>
+<script>
+const names={dof:'Depth of field',regions:'Mask-based layouts',vrs:'Texture variance (Variable Rate Shading)'};
+const descriptions={regions:'Semantic regions and bounding boxes guide token allocation.',vrs:'Texture-error-driven adaptive token layouts.',dof:'Depth-of-field-derived token layouts.'};
+let active='dof',rows=[],overlayEnabled=0;const pairs=[],positions={regions:0,vrs:0,dof:0};
+function reelRows(key=active){if(key!=='regions')return rows.filter(r=>r.modality===key);const masks=rows.filter(r=>r.modality==='mask'),boxes=rows.filter(r=>r.modality==='bbox');return Array.from({length:Math.max(masks.length,boxes.length)},(_,i)=>[masks[i],boxes[i]]).flat().filter(Boolean)}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+function pauseAll(){for(const p of pairs)p.stop()}
+function togglePlayback(){if(pairs.some(p=>p.isPlaying()))pauseAll();else pairs.forEach(p=>p.start(false))}
+function restartPlayback(){pairs.forEach(p=>p.start(true))}
+function cueLegend(data){const box=el('div','cue-legend');if(!data)return box;if(data.type==='classes'){for(const item of data.items){const entry=el('span','legend-item'),swatch=el('span','swatch');swatch.style.background=`rgb(${item.color_rgb.join(',')})`;entry.append(swatch,el('span','',`${item.label} · ${item.token_level}`));box.append(entry)}}else{const ramp=el('span','colorbar');ramp.style.background=`linear-gradient(to right,${data.stops.join(',')})`;box.append(el('span','',`${data.label} · ${data.low}`),ramp,el('span','',data.high))}return box}
+function ready(v){return new Promise((resolve,reject)=>{if(v.readyState>=2)return resolve();const done=()=>{clean();resolve()},fail=()=>{clean();reject(new Error('Video could not load. Try again.'))},timer=setTimeout(fail,45000);function clean(){clearTimeout(timer);v.removeEventListener('loadeddata',done);v.removeEventListener('error',fail)}v.addEventListener('loadeddata',done);v.addEventListener('error',fail);v.preload='auto';v.load()})}
+function sourceTokenLegend(data){const box=el('div','source-token-legend');box.setAttribute('aria-label','Source colors and token allocation');for(const item of data?.items||[]){const entry=el('span','legend-item'),swatch=el('span','swatch');const color=item.label==='Background'?[0,0,0]:item.color_rgb;swatch.style.background=`rgb(${color.join(',')})`;const level=item.token_level.replace(/^up to (\d+×\d+)$/,(_,size)=>size==='1×1'?'1×1':`1×1–${size}`);entry.append(swatch,el('span','',level));box.append(entry)}return box}
+function card(r,i){
+ let overlayEnabled=0; // Each visible source pair owns its overlay toggle.
+ const a=el('article');a.id=r.id;
+ const flow=false; // Use the original paired layout-cue / generation presentation.
+ const tokenCanvas=el('canvas'),tokenLegend=el('div','token-legend');tokenCanvas.width=1280;tokenCanvas.height=720;tokenCanvas.setAttribute('aria-label','Exact grayscale tokenization');
+ const pair=el('div','pair'),videos=[],layoutCanvas=el('canvas'),canvas=el('canvas');layoutCanvas.hidden=false;layoutCanvas.width=1280;layoutCanvas.height=720;layoutCanvas.setAttribute('aria-hidden','true');canvas.width=1280;canvas.height=720;canvas.hidden=true;canvas.setAttribute('aria-hidden','true');
+ if(flow)pair.classList.add('cue-flow');
+ for(const [key,label] of [['layout',flow?'Source cue':'Level of Tokens'],['generated','Generation']]){const panel=el('div','panel'),v=el('video'),stage=el('div','stage');v.src=key==='layout'?(flow?r.source_cue:(r.filled_layout||r.layout)):r[key];v.preload='auto';v.defaultMuted=true;v.muted=true;v.loop=true;v.playsInline=true;v.controls=true;v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('aria-label',`${label}: ${r.video_id}`);stage.append(v);if(key==='generated')stage.append(canvas);if(key==='layout')stage.append(layoutCanvas);panel.append(el('div','label',label),stage);if(key==='generated')panel.append(el('div','token-stats',`${Number(r.compression).toFixed(2)}× token compression`));if(key==='layout'&&r.layout_legend?.type==='colorbar'&&!flow)panel.append(cueLegend(r.layout_legend));if(flow)panel.classList.add(key==='layout'?'source-panel':'generation-panel');pair.append(panel);videos.push(v);
+ if(key==='layout'&&!flow&&(r.modality==='mask'||r.modality==='bbox'))panel.append(el('div','mask-cue-note','Colors distinguish source objects or regions used to allocate tokens.'));
+ if(flow&&key==='layout'){panel.append(sourceTokenLegend(r.source_legend||r.layout_legend));const tp=el('div','panel token-panel'),ts=el('div','token-stage');ts.append(tokenCanvas);tp.append(el('div','label','Level of Tokens'),ts,tokenLegend);pair.append(el('div','flow-arrow source-arrow','→'),tp,el('div','flow-arrow','→'))}}
+ a.append(pair);
+ const controls=el('div','controls'),play=el('button','play','Play both'),toggle=el('button','overlay-toggle','Token overlay: off'),status=el('span','status');play.hidden=true;toggle.setAttribute('aria-label','Toggle token overlay for Generation');pair.children[pair.children.length-1].append(toggle);controls.append(status,play);a.append(controls);
+ let playing=false,busy=false,timer=null,disposed=false,callback=null,paths=null,lastFrame=-1,decoding=null,fillPaths=null,tokenFrame=-1;
+ const gray=[248,220,190,155,118,78,38];
+ const generated=videos[1],ctx=canvas.getContext('2d');
+ function draw(time=generated.currentTime){if(disposed||!paths)return;const f=Math.min(80,Math.max(0,Math.floor(time*15+1e-5))),t=f===0?0:1+Math.floor((f-1)/4);if(t===lastFrame)return;lastFrame=t;for(const c of [ctx]){c.clearRect(0,0,1280,720);if(overlayEnabled===2||c!==ctx){fillPaths[t].forEach((p,k)=>{c.fillStyle=['rgba(240,194,32,.24)','rgba(146,177,38,.24)','rgba(51,160,44,.24)','rgba(53,143,114,.24)','rgba(55,126,184,.24)','rgba(104,102,174,.24)','rgba(152,78,163,.24)'][k];c.fill(p)})}c.strokeStyle='rgba(255,255,255,.9)';c.lineWidth=4;c.stroke(paths[t]);c.strokeStyle='rgba(15,15,15,.95)';c.lineWidth=1.3;c.stroke(paths[t])}}
+ function drawLayout(time=videos[0].currentTime){if(disposed||!paths)return;const frame=Math.min(80,Math.max(0,Math.floor(time*15+1e-5))),t=frame===0?0:1+Math.floor((frame-1)/4);if(layoutCanvas.dataset.slice===String(t))return;layoutCanvas.dataset.slice=String(t);const c=layoutCanvas.getContext('2d');c.clearRect(0,0,1280,720);GridLines.stroke(c,paths[t])} let layoutCallback=null;function layoutTick(now,meta){drawLayout(meta.mediaTime);if(!disposed)layoutCallback=videos[0].requestVideoFrameCallback(layoutTick)}if(videos[0].requestVideoFrameCallback)layoutCallback=videos[0].requestVideoFrameCallback(layoutTick);videos[0].addEventListener('timeupdate',()=>drawLayout());videos[0].addEventListener('seeked',()=>{delete layoutCanvas.dataset.slice;drawLayout()});
+ function drawTokens(time=generated.currentTime){if(!flow||disposed||!fillPaths)return;const f=Math.min(80,Math.max(0,Math.floor(time*15+1e-5))),t=f===0?0:1+Math.floor((f-1)/4);if(t===tokenFrame)return;tokenFrame=t;const c=tokenCanvas.getContext('2d');c.clearRect(0,0,1280,720);fillPaths[t].forEach((p,k)=>{c.fillStyle=`rgb(${gray[k]},${gray[k]},${gray[k]})`;c.fill(p)});c.strokeStyle='black';c.lineWidth=1;c.stroke(paths[t])}
+ function tick(now,meta){draw(meta.mediaTime);drawTokens(meta.mediaTime);if(!disposed)callback=generated.requestVideoFrameCallback(tick)}
+ if(generated.requestVideoFrameCallback)callback=generated.requestVideoFrameCallback(tick);else timer=setInterval(()=>{draw();drawTokens()},40);
+ for(const event of ['seeked','loadeddata','timeupdate'])generated.addEventListener(event,()=>{draw();drawTokens()});
+ async function geometry(){if(paths)return;if(decoding)return decoding;decoding=(async()=>{if(!r.token_grid)throw Error('Exact token grid is unavailable.');const g=r.token_grid,bytes=Uint8Array.from(atob(g.leaves),c=>c.charCodeAt(0));const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));const leaves=new Uint8Array(await new Response(stream).arrayBuffer());paths=[];fillPaths=[];const sizes=new Map();for(let t=0;t<21;t++){const p=new Path2D(),fills=gray.map(()=>new Path2D());for(let j=g.offsets[t];j<g.offsets[t+1];j++){const [y0,y1,x0,x1]=leaves.subarray(j*4,j*4+4),h=y1-y0,w=x1-x0,k=Math.min(6,Math.max(0,Math.round(Math.log2(h*w))));p.rect(x0*16+.5,y0*16+.5,Math.min(x1*16,1279)-x0*16,Math.min(y1*16,719)-y0*16);fills[k].rect(x0*16,y0*16,w*16,h*16);sizes.set(`${h}×${w}`,{k,area:h*w})}paths.push(p);fillPaths.push(fills)}if(flow&&!disposed){tokenLegend.replaceChildren();for(const [label,{k}] of [...sizes].sort((a,b)=>a[1].area-b[1].area)){const item=el('span','legend-item'),swatch=el('span','swatch');swatch.style.background=`rgb(${gray[k]},${gray[k]},${gray[k]})`;item.append(swatch,el('span','',label));tokenLegend.append(item)}}})();try{await decoding}catch(e){decoding=null;throw e}}
+ async function updateOverlay(){toggle.textContent='Token overlay: '+(overlayEnabled?'on':'off');toggle.title='Show or hide token overlay.';toggle.setAttribute('aria-pressed',String(overlayEnabled>0));canvas.hidden=!overlayEnabled;try{await geometry();if(disposed)return;lastFrame=-1;draw();drawLayout()}catch(e){status.textContent=e.message;canvas.hidden=true}}
+ if(flow)geometry().then(()=>{if(disposed)return;drawTokens()}).catch(e=>status.textContent=e.message);
+ toggle.onclick=()=>{overlayEnabled=overlayEnabled?0:2;updateOverlay()};updateOverlay();
+ function stop(){playing=false;videos.forEach(v=>v.pause());play.textContent='Play both'}
+ function dispose(){disposed=true;if(layoutCallback!==null&&videos[0].cancelVideoFrameCallback)videos[0].cancelVideoFrameCallback(layoutCallback);stop();clearInterval(timer);if(callback!==null&&generated.cancelVideoFrameCallback)generated.cancelVideoFrameCallback(callback);videos.forEach(v=>{v.removeAttribute('src');v.load()})}pairs.push({stop,dispose,start,isPlaying:()=>videos.some(v=>!v.paused)});
+ async function start(reset){if(busy||disposed||document.hidden)return;busy=true;play.disabled=true;try{stop();status.textContent='Loading both videos…';await Promise.all(videos.map(ready));if(disposed||document.hidden)return;const t=reset?0:generated.currentTime;videos.forEach(v=>{v.currentTime=t});await Promise.all(videos.map(v=>v.play()));if(disposed||document.hidden){stop();return}playing=true;play.hidden=true;status.textContent=''}catch(e){stop();if(!disposed){status.textContent=e.name==='NotAllowedError'?'Browser blocked autoplay — click Play both to start.':e.message;play.hidden=false}}finally{busy=false;play.disabled=false}}
+ generated.addEventListener('timeupdate',()=>{if(playing&&Math.abs(videos[0].currentTime-generated.currentTime)>.12)videos[0].currentTime=generated.currentTime});
+ generated.addEventListener('seeked',()=>{if(!disposed&&videos[0].readyState>=1)videos[0].currentTime=generated.currentTime});
+ generated.addEventListener('pause',()=>{if(playing)stop()});
+ generated.addEventListener('play',()=>{if(!busy&&!playing&&!disposed)start(false)});
+ play.onclick=()=>start(false);
+ const details=el('details','generation-prompt');details.append(el('summary','','Generation prompt'),el('p','',r.prompt));a.append(details);return a;
+}
+function move(delta,key=active){active=key;const n=reelRows(key).length;if(!n)return;positions[key]=(positions[key]+delta+n)%n;renderGroup(key)}
+const dotRails={};
+function revealDot(dots,i){const left=i*24,right=left+24,start=dots.scrollLeft,width=dots.clientWidth;if(left<start||right>start+width)dots.scrollTo({left:Math.max(0,left<start?left:right-width),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}
+const groupViews={};
+async function renderGroup(key){
+ const view=groupViews[key];if(!view)return;
+ const ticket=view.ticket=(view.ticket||0)+1,listBefore=reelRows(key),selected=positions[key];
+ if(view.controllers.length){const r=listBefore[selected];await MediaPreload.prepare([r.filled_layout||r.layout,r.generated],view.body);}
+ if(view.ticket!==ticket)return;
+ MediaPreload.busy(view.body,false);
+ MediaPreload.enqueue([listBefore[(selected+1)%listBefore.length],listBefore[(selected-1+listBefore.length)%listBefore.length]],view.body);
+ for(const p of view.controllers){p.dispose();const at=pairs.indexOf(p);if(at>=0)pairs.splice(at,1)}
+ const list=reelRows(key),i=positions[key];view.body.replaceChildren();
+ if(!list.length){view.body.textContent='No videos available.';return}
+ const before=pairs.length;view.body.append(card(list[i],i));view.controllers=pairs.slice(before);
+ [...view.dots.children].forEach((b,j)=>{b.classList.toggle('active',j===i);b.setAttribute('aria-pressed',String(j===i))});
+ requestAnimationFrame(()=>revealDot(view.dots,i));
+ if(view.visible)view.controllers.forEach(p=>p.start(true));
+}
+function render(){
+ pairs.forEach(p=>p.dispose());pairs.length=0;
+ const root=document.getElementById('gallery');root.replaceChildren();
+ for(const [key,name] of Object.entries(names)){
+  const section=el('section','video-source-group');section.id='video-source-'+key;section.tabIndex=0;
+  section.setAttribute('aria-label',name);section.append(el('h2','',name));
+  const bar=el('div','reel-nav'),prev=el('button','','← Previous'),next=el('button','','Next →'),dots=el('div','dots'),play=el('button','','Play / pause all'),restart=el('button','','Restart all'),body=el('div');
+  const view={section,body,dots,controllers:[],visible:false};groupViews[key]=view;
+  prev.onclick=()=>move(-1,key);next.onclick=()=>move(1,key);
+  play.onclick=()=>{if(view.controllers.some(p=>p.isPlaying()))view.controllers.forEach(p=>p.stop());else view.controllers.forEach(p=>p.start(false))};
+  restart.onclick=()=>view.controllers.forEach(p=>p.start(true));
+  dots.setAttribute('aria-label','Choose '+name+' video');
+  reelRows(key).forEach((r,j)=>{const b=el('button');b.setAttribute('aria-label','Show video '+(j+1));b.onclick=()=>{active=key;positions[key]=j;renderGroup(key)};dots.append(b)});
+  section.addEventListener('pointerenter',()=>{active=key});section.addEventListener('focusin',()=>{active=key});
+  bar.append(prev,dots,next,play,restart);section.append(bar,body);root.append(section);renderGroup(key);
+  new IntersectionObserver(entries=>{view.visible=entries[0].isIntersecting;view.controllers.forEach(p=>view.visible?p.start(false):p.stop())},{threshold:.15}).observe(section);
+ }
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAll();else Object.values(groupViews).filter(v=>v.visible).forEach(v=>v.controllers.forEach(p=>p.start(false)))});
+document.addEventListener('keydown',e=>{if(e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey||e.repeat||e.target.isContentEditable||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||document.querySelector('dialog[open]'))return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){const view=groupViews[active];if(!view||(!e.target.closest('.video-source-group')&&!view.visible))return;e.preventDefault();move(e.key==='ArrowLeft'?-1:1)}});
+// All source groups are visible; each owns independent navigation.
+// Version the manifest so cached pages cannot keep selecting superseded cues.
+fetch('showcase.json?v=robotics-cue-alignment-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Showcase is unavailable');return r.json()}).then(d=>{rows=d.items;const hash=location.hash.slice(1);active=names[hash]?hash:(hash==='bbox'?'regions':'dof');if(hash==='bbox')positions.regions=1;render()}).catch(e=>document.getElementById('gallery').textContent=e.message);
+</script>
+<section id="image-results" aria-label="Selected image generation results"></section>
+<script src="images.js?v=layout-adaptive-1" defer></script>
+<link rel="stylesheet" href="bbox_examples.css?v=timing-1">
+<section id="bbox-conditioning" aria-label="Layout-based generation from Ideogram-style bounding boxes"></section>
+<script src="bbox_examples.js?v=video-first-1" defer></script>
+<link rel="stylesheet" href="typography.css?v=inline-stats-1">
+<section id="typography" aria-label="Typography with spatial token control"></section>
+<script src="typography.js?v=video-first-1" defer></script>
+
+
+<section id="comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="comparison-frame" src="comparisons.html?v=section-summaries-1" title="Qualitative comparisons: layout, baselines, and ours" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1100px;border:0;border-radius:12px"></iframe></section>
+<script>
+window.addEventListener('message',event=>{const frame=document.getElementById('comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
+</script>
+<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=remove-palette-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
+<script>
+window.addEventListener('message',event=>{const frame=document.getElementById('image-comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='image-comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
+// Route arrows to the visible image comparison even before its iframe has focus.
+document.addEventListener('keydown',e=>{
+ if(e.defaultPrevented||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.repeat||e.target.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)||document.querySelector('dialog[open]'))return;
+ if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+ const frame=document.getElementById('image-comparison-frame'),rect=frame.getBoundingClientRect(),middle=window.innerHeight/2;
+ if(rect.top<=middle&&rect.bottom>=middle){e.preventDefault();e.stopImmediatePropagation();frame.contentWindow.postMessage({type:'image-comparison-navigate',direction:e.key==='ArrowLeft'?-1:1},location.origin)}
+},true);
+</script>
+</body></html>
