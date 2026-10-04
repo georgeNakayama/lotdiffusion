@@ -34,7 +34,8 @@ p { margin: 0 0 18px; }
 .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 17px; border-radius: 99px; background: #363636; color: #fff; font-size: 14px; }
 .pill:hover { color: white; background: #555; }
 .pill svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.teaser-placeholder { width: 100%; aspect-ratio: 16 / 7; margin: 32px auto 36px; }
+.teaser { width: 100%; margin: 32px auto 36px; }
+.teaser video { display: block; width: 100%; height: auto; }
 section { margin-bottom: 55px; scroll-margin-top: 30px; }
 .text-section { max-width: 830px; margin-left: auto; margin-right: auto; }
 h2 { text-align: center; margin: 0 0 20px; font-size: 27px; line-height: 1.25; font-weight: 400; }
@@ -60,7 +61,7 @@ footer { text-align: center; padding: 0 24px 35px; font-size: 13px; color: #777;
   .paper-header { padding-top: 32px; }
   h1 { letter-spacing: -.4px; }
   .venue { font-size: 13px; }
-  .teaser-placeholder { aspect-ratio: 16 / 9; margin: 24px auto; }
+  .teaser { margin: 24px auto; }
   h2 { font-size: 25px; }
   section { margin-bottom: 40px; }
   #abstract p, .method-copy p, figcaption { text-align: left; }
