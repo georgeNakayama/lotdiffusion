@@ -22,7 +22,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1772d0; outline-offs
 .paper-header { text-align: center; padding-top: 45px; }
 h1 { margin: 0 0 15px; font-size: clamp(30px, 4.5vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -.7px; }
 p { margin: 0 0 18px; }
-.authors { margin-bottom: 4px; font-size: 18px; }
+.authors { margin-bottom: 10px; font-size: 18px; }
+.author-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 22px; }
+.author-row > span { white-space: nowrap; }
+.authors sup, .affiliations sup { font-size: .7em; margin-left: 2px; }
+.affiliations { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-bottom: 2px; font-size: 16px; }
+.affiliations sup { margin-left: 0; margin-right: 3px; }
+.author-note { margin-bottom: 16px; font-size: 13px; color: #666; }
 .venue { font-size: 15px; color: #666; margin-bottom: 17px; }
 .paper-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 17px; border-radius: 99px; background: #363636; color: #fff; font-size: 14px; }
